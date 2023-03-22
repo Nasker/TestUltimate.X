@@ -4,9 +4,13 @@
 [d chip 18F45K80 ]
 [d frameptr 4065 ]
 "13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _ledInit ledInit `(v  1 e 1 0 ]
-"17
-[v _ledSwitch ledSwitch `(v  1 e 1 0 ]
+[v _portsInit portsInit `(v  1 e 1 0 ]
+"20
+[v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
+"24
+[v _portBPinRead portBPinRead `(a  1 e 1 0 ]
+"28
+[v _portAPinWrite_ms portAPinWrite_ms `(v  1 e 1 0 ]
 "1 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\aodiv.c
@@ -53,7 +57,7 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"5 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"10 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 [v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
@@ -476,24 +480,10 @@
 ]
 [u S332 . 1 `S318 1 . 1 0 `S327 1 . 1 0 ]
 [v _PIR5bits PIR5bits `VES332  1 e 1 @3959 ]
-[s S1039 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"30019
-[s S1048 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-`uc 1 . 1 0 :4:1 
-`uc 1 LVDIN 1 0 :1:5 
-`uc 1 . 1 0 :1:6 
-`uc 1 RJPU 1 0 :1:7 
-]
-[u S1054 . 1 `S1039 1 . 1 0 `S1048 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1054  1 e 1 @3968 ]
+"29995
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"30074
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 "30492
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "30594
@@ -621,8 +611,6 @@
 "37236
 "37236
 [v _INTCONbits INTCONbits `VES138  1 e 1 @4082 ]
-"44979
-[v _TRISA0 TRISA0 `VEb  1 e 0 @31888 ]
 "99 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\doprnt.c
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
@@ -632,19 +620,33 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "54 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
 [v _WakeUpInterruptHandler WakeUpInterruptHandler `*.37(v  1 s 2 WakeUpInterruptHandler ]
-"5 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"10 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"17
+"24
 } 0
-"17 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _ledSwitch ledSwitch `(v  1 e 1 0 ]
+"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+[v _portsInit portsInit `(v  1 e 1 0 ]
 {
-[v ledSwitch@state state `a  1 a 1 wreg ]
-[v ledSwitch@state state `a  1 a 1 wreg ]
-[v ledSwitch@time time `us  1 p 2 6 ]
-[v ledSwitch@state state `a  1 a 1 90 ]
-"22
+"18
+} 0
+"24
+[v _portBPinRead portBPinRead `(a  1 e 1 0 ]
+{
+[v portBPinRead@pin pin `uc  1 a 1 wreg ]
+[v portBPinRead@pin pin `uc  1 a 1 wreg ]
+[v portBPinRead@pin pin `uc  1 a 1 4 ]
+"26
+} 0
+"28
+[v _portAPinWrite_ms portAPinWrite_ms `(v  1 e 1 0 ]
+{
+[v portAPinWrite_ms@pin pin `uc  1 a 1 wreg ]
+[v portAPinWrite_ms@pin pin `uc  1 a 1 wreg ]
+[v portAPinWrite_ms@state state `a  1 p 1 6 ]
+[v portAPinWrite_ms@time time `us  1 p 2 7 ]
+[v portAPinWrite_ms@pin pin `uc  1 a 1 90 ]
+"32
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -660,9 +662,9 @@
 {
 "1523
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 88 ]
-[s S1564 _IO_FILE 0 ]
+[s S1537 _IO_FILE 0 ]
 "1520
-[v vfprintf@fp fp `*.2S1564  1 p 2 82 ]
+[v vfprintf@fp fp `*.2S1537  1 p 2 82 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 84 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 86 ]
 "1543
@@ -670,14 +672,14 @@
 "1007
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1582 . 8 `o 1 ll 8 0 `uo 1 llu 8 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+[u S1555 . 8 `o 1 ll 8 0 `uo 1 llu 8 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
 "1016
-[v vfpfcnvrt@convarg convarg `S1582  1 a 8 72 ]
+[v vfpfcnvrt@convarg convarg `S1555  1 a 8 72 ]
 "1009
 [v vfpfcnvrt@cp cp `*.25uc  1 a 2 80 ]
-[s S1564 _IO_FILE 0 ]
+[s S1537 _IO_FILE 0 ]
 "1007
-[v vfpfcnvrt@fp fp `*.2S1564  1 p 2 64 ]
+[v vfpfcnvrt@fp fp `*.2S1537  1 p 2 64 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 66 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 68 ]
 "1517
@@ -693,9 +695,9 @@
 [v dtoa@p p `i  1 a 2 49 ]
 "445
 [v dtoa@s s `uc  1 a 1 61 ]
-[s S1564 _IO_FILE 0 ]
+[s S1537 _IO_FILE 0 ]
 "443
-[v dtoa@fp fp `*.2S1564  1 p 2 29 ]
+[v dtoa@fp fp `*.2S1537  1 p 2 29 ]
 [v dtoa@d d `o  1 p 8 31 ]
 "502
 } 0
@@ -705,9 +707,9 @@
 "135
 [v pad@w w `i  1 a 2 27 ]
 [v pad@i i `i  1 a 2 25 ]
-[s S1564 _IO_FILE 0 ]
+[s S1537 _IO_FILE 0 ]
 "133
-[v pad@fp fp `*.2S1564  1 p 2 18 ]
+[v pad@fp fp `*.2S1537  1 p 2 18 ]
 [v pad@buf buf `*.39uc  1 p 2 20 ]
 [v pad@p p `i  1 p 2 22 ]
 "164
@@ -721,18 +723,18 @@
 [v fputs@c c `uc  1 a 1 15 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 11 ]
-[u S1542 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1545 _IO_FILE 11 `S1542 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.2S1545  1 p 2 13 ]
+[u S1515 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1518 _IO_FILE 11 `S1515 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.2S1518  1 p 2 13 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1542 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1545 _IO_FILE 11 `S1542 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.2S1545  1 p 2 4 ]
+[u S1515 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1518 _IO_FILE 11 `S1515 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.2S1518  1 p 2 4 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\putch.c
@@ -770,16 +772,20 @@
 [v ___aodiv@divisor divisor `o  1 p 8 10 ]
 "43
 } 0
+"20 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+[v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
+{
+[v portAPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portAPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portAPinWrite@state state `a  1 p 1 2 ]
+[v portAPinWrite@pin pin `uc  1 a 1 5 ]
+"22
+} 0
 "38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 [v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
 {
 [v DELAY_milliseconds@milliseconds milliseconds `us  1 p 2 2 ]
 "42
-} 0
-"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _ledInit ledInit `(v  1 e 1 0 ]
-{
-"15
 } 0
 "50 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

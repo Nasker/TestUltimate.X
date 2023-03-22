@@ -1,22 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"44979 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 44979: extern volatile __bit TRISA0 __attribute__((address(0x7C90)));
-[v _TRISA0 `Vb ~T0 @X0 0 e@31888 ]
-"30001
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 30001:     struct {
-[s S1138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1138 . RA0 RA1 RA2 RA3 . RA5 RA6 RA7 ]
-"30011
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 30011:     struct {
-[s S1139 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1139 . ULPWUIN . LVDIN . RJPU ]
-"30000
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 30000: typedef union {
-[u S1137 `S1138 1 `S1139 1 ]
-[n S1137 . . . ]
-"30019
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 30019: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS1137 ~T0 @X0 0 e@3968 ]
+"31088 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 31088: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"31145
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 31145: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"29995
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 29995: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"30074
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 30074: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "34 ./mcc_generated_files/delay.h
 [; ;./mcc_generated_files/delay.h: 34: void DELAY_milliseconds(uint16_t milliseconds);
 [v _DELAY_milliseconds `(v ~T0 @X0 0 ef1`us ]
@@ -1420,74 +1414,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37766: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "13 ./LedControl.h
-[; ;./LedControl.h: 13: void ledInit(){
-[v _ledInit `(v ~T0 @X0 1 ef ]
+[; ;./LedControl.h: 13: void portsInit(){
+[v _portsInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _ledInit ]
+[e :U _portsInit ]
 [f ]
-"14
-[; ;./LedControl.h: 14:     TRISA0 = 0;
-[e = _TRISA0 -> -> 0 `i `b ]
 "15
-[; ;./LedControl.h: 15: }
+[; ;./LedControl.h: 15:     TRISA = 0x00;
+[e = _TRISA -> -> 0 `i `uc ]
+"17
+[; ;./LedControl.h: 17:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
+"18
+[; ;./LedControl.h: 18: }
 [e :UE 1546 ]
 }
-"17
-[; ;./LedControl.h: 17: void ledSwitch(_Bool state, uint16_t time){
-[v _ledSwitch `(v ~T0 @X0 1 ef2`a`us ]
-{
-[e :U _ledSwitch ]
-[v _state `a ~T0 @X0 1 r1 ]
-[v _time `us ~T0 @X0 1 r2 ]
-[f ]
-"18
-[; ;./LedControl.h: 18:     PORTAbits.RA0 = state;
-[e = . . _PORTAbits 0 0 -> _state `uc ]
 "20
-[; ;./LedControl.h: 20:     DELAY_milliseconds(time);
-[e ( _DELAY_milliseconds (1 _time ]
+[; ;./LedControl.h: 20: void portAPinWrite(uint8_t pin, _Bool state){
+[v _portAPinWrite `(v ~T0 @X0 1 ef2`uc`a ]
+{
+[e :U _portAPinWrite ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[v _state `a ~T0 @X0 1 r2 ]
+[f ]
 "21
-[; ;./LedControl.h: 21:     printf("State is %d\n", state);
-[e ( _printf , (. :s 1C -> _state `i ]
+[; ;./LedControl.h: 21:     PORTA = (state << pin);
+[e = _PORTA -> << -> _state `i -> _pin `i `uc ]
 "22
 [; ;./LedControl.h: 22: }
 [e :UE 1547 ]
 }
+"24
+[; ;./LedControl.h: 24: _Bool portBPinRead(uint8_t pin){
+[v _portBPinRead `(a ~T0 @X0 1 ef1`uc ]
+{
+[e :U _portBPinRead ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[f ]
+"25
+[; ;./LedControl.h: 25:     return PORTB & (1 << pin);
+[e ) -> & -> _PORTB `i << -> 1 `i -> _pin `i `a ]
+[e $UE 1548  ]
+"26
+[; ;./LedControl.h: 26: }
+[e :UE 1548 ]
+}
+"28
+[; ;./LedControl.h: 28: void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
+[v _portAPinWrite_ms `(v ~T0 @X0 1 ef3`uc`a`us ]
+{
+[e :U _portAPinWrite_ms ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[v _state `a ~T0 @X0 1 r2 ]
+[v _time `us ~T0 @X0 1 r3 ]
+[f ]
+"29
+[; ;./LedControl.h: 29:     portAPinWrite(pin, state);
+[e ( _portAPinWrite (2 , _pin _state ]
+"30
+[; ;./LedControl.h: 30:     DELAY_milliseconds(time);
+[e ( _DELAY_milliseconds (1 _time ]
+"31
+[; ;./LedControl.h: 31:     printf("State is %d\n", state);
+[e ( _printf , (. :s 1C -> _state `i ]
+"32
+[; ;./LedControl.h: 32: }
+[e :UE 1549 ]
+}
+"34
+[; ;./LedControl.h: 34: void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
+[v _bridgePortAPinToPortBPin `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _bridgePortAPinToPortBPin ]
+[v _pinRead `uc ~T0 @X0 1 r1 ]
+[v _pinWrite `uc ~T0 @X0 1 r2 ]
+[f ]
+"35
+[; ;./LedControl.h: 35:     _Bool state = portBPinRead(pinRead);
+[v _state `a ~T0 @X0 1 a ]
+[e = _state ( _portBPinRead (1 _pinRead ]
+"36
+[; ;./LedControl.h: 36:     portAPinWrite(pinWrite, state);
+[e ( _portAPinWrite (2 , _pinWrite _state ]
+"37
+[; ;./LedControl.h: 37: }
+[e :UE 1550 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"5 main.c
-[; ;main.c: 5: void main(void){
+"10 main.c
+[; ;main.c: 10: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"6
-[; ;main.c: 6:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "11
-[; ;main.c: 11:     ledInit();
-[e ( _ledInit ..  ]
-"12
-[; ;main.c: 12:     while (1){
-[e :U 1550 ]
-{
-"13
-[; ;main.c: 13:         ledSwitch(1, 250);
-[e ( _ledSwitch (2 , -> -> 1 `i `a -> -> 250 `i `us ]
-"14
-[; ;main.c: 14:         ledSwitch(0, 250);
-[e ( _ledSwitch (2 , -> -> 0 `i `a -> -> 250 `i `us ]
-"15
-[; ;main.c: 15:     }
-}
-[e :U 1549 ]
-[e $U 1550  ]
-[e :U 1551 ]
+[; ;main.c: 11:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "16
-[; ;main.c: 16:     return;
-[e $UE 1548  ]
+[; ;main.c: 16:     portsInit();
+[e ( _portsInit ..  ]
 "17
-[; ;main.c: 17: }
-[e :UE 1548 ]
+[; ;main.c: 17:     while (1){
+[e :U 1553 ]
+{
+"18
+[; ;main.c: 18:       if(portBPinRead(0)){
+[e $ ! != -> ( _portBPinRead (1 -> -> 0 `i `uc `i -> 0 `i 1555  ]
+{
+"19
+[; ;main.c: 19:         portAPinWrite_ms(2, 1, 250);
+[e ( _portAPinWrite_ms (3 , , -> -> 2 `i `uc -> -> 1 `i `a -> -> 250 `i `us ]
+"20
+[; ;main.c: 20:         portAPinWrite_ms(2, 0, 250);
+[e ( _portAPinWrite_ms (3 , , -> -> 2 `i `uc -> -> 0 `i `a -> -> 250 `i `us ]
+"21
+[; ;main.c: 21:       }
+}
+[e :U 1555 ]
+"22
+[; ;main.c: 22:     }
+}
+[e :U 1552 ]
+[e $U 1553  ]
+[e :U 1554 ]
+"23
+[; ;main.c: 23:     return;
+[e $UE 1551  ]
+"24
+[; ;main.c: 24: }
+[e :UE 1551 ]
 }
 [p f _printf 8388736 ]
 [a 1C 83 116 97 116 101 32 105 115 32 37 100 10 0 ]

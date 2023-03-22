@@ -20743,17 +20743,37 @@ void OSCILLATOR_Initialize(void);
 
 # 1 "./LedControl.h" 1
 # 13 "./LedControl.h"
-void ledInit(){
-    TRISA0 = 0;
+void portsInit(){
+
+    TRISA = 0x00;
+
+    TRISB = 0xFF;
 }
 
-void ledSwitch(_Bool state, uint16_t time){
-    PORTAbits.RA0 = state;
+void portAPinWrite(uint8_t pin, _Bool state){
+    PORTA = (state << pin);
+}
 
+_Bool portBPinRead(uint8_t pin){
+    return PORTB & (1 << pin);
+}
+
+void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
+    portAPinWrite(pin, state);
     DELAY_milliseconds(time);
     printf("State is %d\n", state);
 }
+
+void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
+    _Bool state = portBPinRead(pinRead);
+    portAPinWrite(pinWrite, state);
+}
 # 2 "main.c" 2
+
+
+
+
+
 
 
 
@@ -20763,10 +20783,12 @@ void main(void){
 
 
 
-    ledInit();
+    portsInit();
     while (1){
-        ledSwitch(1, 250);
-        ledSwitch(0, 250);
+      if(portBPinRead(0)){
+        portAPinWrite_ms(2, 1, 250);
+        portAPinWrite_ms(2, 0, 250);
+      }
     }
     return;
 }

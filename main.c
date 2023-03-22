@@ -1,6 +1,11 @@
 #include "mcc_generated_files/mcc.h"
 #include "LedControl.h"
 
+#define PIN_READ   0
+#define PIN_WRITE  2
+
+#define DELAY_PERIOD 250
+
 
 void main(void){
     SYSTEM_Initialize();
@@ -8,13 +13,12 @@ void main(void){
     //INTERRUPT_GlobalInterruptDisable();
     //INTERRUPT_PeripheralInterruptEnable();
     //INTERRUPT_PeripheralInterruptDisable();
-    ledInit();
+    portsInit();
     while (true){
-        ledSwitch(true, 250);
-        ledSwitch(false, 250);
+      if(portBPinRead(PIN_READ)){
+        portAPinWrite_ms(PIN_WRITE, true, DELAY_PERIOD);
+        portAPinWrite_ms(PIN_WRITE, false, DELAY_PERIOD);
+      }
     }
     return;
 }
-/**
- End of File
-*/

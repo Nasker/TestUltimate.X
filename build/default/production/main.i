@@ -7,7 +7,6 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 44 "main.c"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 1 3
@@ -20740,30 +20739,30 @@ void ECAN_WAKI_ISR(void);
 void SYSTEM_Initialize(void);
 # 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 44 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "./LedControl.h" 1
-# 39 "./LedControl.h"
+# 13 "./LedControl.h"
 void ledInit(){
     TRISA0 = 0;
 }
 
 void ledSwitch(_Bool state, uint16_t time){
     PORTAbits.RA0 = state;
+
     DELAY_milliseconds(time);
     printf("State is %d\n", state);
 }
-# 45 "main.c" 2
-
-
-
+# 2 "main.c" 2
 
 
 
 void main(void){
-
     SYSTEM_Initialize();
-# 70 "main.c"
+
+
+
+
     ledInit();
     while (1){
         ledSwitch(1, 250);

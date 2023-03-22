@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+$C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 idloc IDLOC 5 200000 200000 8 1 1
 init CODE 0 4C 4C 4 1 2
 reset_vec CODE 0 0 0 4 1 2
@@ -100,7 +100,7 @@ MEDIUMCONST 1AE4-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TestUltimate.X.production.o
-8 intcode CODE >9687:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
+8 intcode CODE >9687:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
 8 intcode CODE >58:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
 12 intcode CODE >61:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
 20 intcode CODE >63:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
@@ -191,9 +191,9 @@ $dist/default/production\TestUltimate.X.production.o
 1AB2 text15 CODE >55:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
 1AB6 text15 CODE >56:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
 1ABA text15 CODE >57:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
-1AD8 text14 CODE >39:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-1AD8 text14 CODE >40:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-1ADA text14 CODE >41:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+1AD8 text14 CODE >13:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+1AD8 text14 CODE >14:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+1ADA text14 CODE >15:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
 1A18 text13 CODE >38:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 1A18 text13 CODE >39:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 1A1C text13 CODE >40:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
@@ -338,33 +338,33 @@ $dist/default/production\TestUltimate.X.production.o
 1A46 text2 CODE >9:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\printf.c
 1A50 text2 CODE >10:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\printf.c
 1A6C text2 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\printf.c
-19EA text1 CODE >43:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-19EC text1 CODE >44:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-19F6 text1 CODE >45:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-1A02 text1 CODE >46:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-1A16 text1 CODE >47:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-19BA text0 CODE >51:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-19BA text0 CODE >53:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-19BE text0 CODE >70:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-19C2 text0 CODE >72:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-19D2 text0 CODE >73:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-1A8E cinit CODE >6044:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A8E cinit CODE >6046:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A8E cinit CODE >6049:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A8E cinit CODE >6071:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A92 cinit CODE >6072:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A94 cinit CODE >6073:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A94 cinit CODE >6074:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A96 cinit CODE >6075:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A98 cinit CODE >6076:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A9A cinit CODE >6079:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A9C cinit CODE >6085:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A9C cinit CODE >6087:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1A9E cinit CODE >6088:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1AA0 cinit CODE >6090:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1AA2 cinit CODE >6091:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1AA4 cinit CODE >6092:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
-1AA6 cinit CODE >6093:C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.s
+19EA text1 CODE >17:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+19EC text1 CODE >18:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+19F6 text1 CODE >20:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+1A02 text1 CODE >21:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+1A16 text1 CODE >22:C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+19BA text0 CODE >5:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+19BA text0 CODE >6:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+19BE text0 CODE >11:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+19C2 text0 CODE >13:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+19D2 text0 CODE >14:C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+1A8E cinit CODE >6044:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A8E cinit CODE >6046:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A8E cinit CODE >6049:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A8E cinit CODE >6071:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A92 cinit CODE >6072:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A94 cinit CODE >6073:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A94 cinit CODE >6074:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A96 cinit CODE >6075:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A98 cinit CODE >6076:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A9A cinit CODE >6079:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A9C cinit CODE >6085:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A9C cinit CODE >6087:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1A9E cinit CODE >6088:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1AA0 cinit CODE >6090:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1AA2 cinit CODE >6091:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1AA4 cinit CODE >6092:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
+1AA6 cinit CODE >6093:C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -391,7 +391,7 @@ _RXM1EIDL EFF 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _RXM1SIDH EFC 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _RXM1SIDL EFD 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\TestUltimate.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TestUltimate.X.production.o
 __end_of_INTERRUPT_Initialize 1AE0 0 CODE 0 text18 dist/default/production\TestUltimate.X.production.o
 ?_abs 15 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
@@ -403,7 +403,7 @@ _LATC F8B 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _LATE F8D 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _WPUB F5B 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+___sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 _dbuf 66 0 BANK0 1 bssBANK0 dist/default/production\TestUltimate.X.production.o
 _dtoa 1010 0 CODE 0 text5 dist/default/production\TestUltimate.X.production.o
 _main 19BA 0 CODE 0 text0 dist/default/production\TestUltimate.X.production.o
@@ -413,7 +413,7 @@ btemp 5D 0 COMRAM 1 temp dist/default/production\TestUltimate.X.production.o
 pad@i 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 pad@p 17 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 pad@w 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
-start 4C 0 CODE 0 init C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+start 4C 0 CODE 0 init C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 ___aomod@counter 13 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TestUltimate.X.production.o
 pad@fp 13 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
@@ -425,11 +425,11 @@ __end_of_vfpfcnvrt 16C6 0 CODE 0 text4 dist/default/production\TestUltimate.X.pr
 ttemp5 5E 0 COMRAM 1 temp dist/default/production\TestUltimate.X.production.o
 ttemp6 61 0 COMRAM 1 temp dist/default/production\TestUltimate.X.production.o
 ttemp7 65 0 COMRAM 1 temp dist/default/production\TestUltimate.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-intlevel0 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-intlevel1 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-intlevel2 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-intlevel3 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+__accesstop 60 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+intlevel0 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+intlevel1 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+intlevel2 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+intlevel3 0 0 CODE 0 text C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TestUltimate.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\TestUltimate.X.production.o
 wtemp8 5E 0 COMRAM 1 temp dist/default/production\TestUltimate.X.production.o
@@ -443,8 +443,8 @@ __end_of_ECAN_SetWakeUpInterruptHandler 1AD8 0 CODE 0 text20 dist/default/produc
 _ANCON0 F5D 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _ANCON1 F5C 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __end_of_ECAN_Initialize 17A0 0 CODE 0 text19 dist/default/production\TestUltimate.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 _CANCON F6F 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __end_of_INTERRUPT_InterruptManager 4C 0 CODE 0 intcode dist/default/production\TestUltimate.X.production.o
 _CIOCON F70 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
@@ -516,7 +516,7 @@ _TXB2D6 F0C 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _TXB2D7 F0D 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __end_of_ECAN_WAKI_ISR 1A8E 0 CODE 0 text22 dist/default/production\TestUltimate.X.production.o
 __end_of_printf 1A6E 0 CODE 0 text2 dist/default/production\TestUltimate.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+isa$xinst 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 fputc@fp 5 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 fputs@fp E 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\TestUltimate.X.production.o
@@ -557,7 +557,7 @@ ledSwitch@state 5B 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\TestUltimate.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\TestUltimate.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\TestUltimate.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\TestUltimate.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\TestUltimate.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\TestUltimate.X.production.o
@@ -630,7 +630,7 @@ __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TestUltimate.X.productio
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\TestUltimate.X.production.o
 _ECANCON F72 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _SYSTEM_Initialize 1AAA 0 CODE 0 text15 dist/default/production\TestUltimate.X.production.o
-_dtoa$1607 30 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
+_dtoa$1610 30 0 COMRAM 1 cstackCOMRAM dist/default/production\TestUltimate.X.production.o
 __end_of_abs 1982 0 CODE 0 text10 dist/default/production\TestUltimate.X.production.o
 __end_of_pad 18B0 0 CODE 0 text6 dist/default/production\TestUltimate.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production\TestUltimate.X.production.o
@@ -691,9 +691,9 @@ _RXB0DLC F65 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _RXB1DLC F35 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\TestUltimate.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\TestUltimate.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-stackhi 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-stacklo 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+isa$std 1 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+stackhi 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+stacklo 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\TestUltimate.X.production.o
 _OSCCON2 FD2 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _OSCTUNE F9B 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
@@ -775,7 +775,7 @@ __Ltext20 0 0 ABS 0 text20 dist/default/production\TestUltimate.X.production.o
 __Ltext22 0 0 ABS 0 text22 dist/default/production\TestUltimate.X.production.o
 __Ltext23 0 0 ABS 0 text23 dist/default/production\TestUltimate.X.production.o
 __Ltext24 0 0 ABS 0 text24 dist/default/production\TestUltimate.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 _vfprintf 18B0 0 CODE 0 text3 dist/default/production\TestUltimate.X.production.o
 __Lpowerup 4C 0 CODE 0 powerup dist/default/production\TestUltimate.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TestUltimate.X.production.o
@@ -783,8 +783,8 @@ _TXB1CONbits F10 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\TestUltimate.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\TestUltimate.X.production.o
 __end_of_vfprintf 18FE 0 CODE 0 text3 dist/default/production\TestUltimate.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
-___heap_lo 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+___heap_hi 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
+___heap_lo 0 0 ABS 0 - C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
 ___param_bank 0 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 _RXB0CONbits F60 0 ABS 0 - dist/default/production\TestUltimate.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TestUltimate.X.production.o

@@ -1419,74 +1419,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37766
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37766: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"39 ./LedControl.h
-[; ;./LedControl.h: 39: void ledInit(){
+"13 ./LedControl.h
+[; ;./LedControl.h: 13: void ledInit(){
 [v _ledInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _ledInit ]
 [f ]
-"40
-[; ;./LedControl.h: 40:     TRISA0 = 0;
+"14
+[; ;./LedControl.h: 14:     TRISA0 = 0;
 [e = _TRISA0 -> -> 0 `i `b ]
-"41
-[; ;./LedControl.h: 41: }
+"15
+[; ;./LedControl.h: 15: }
 [e :UE 1546 ]
 }
-"43
-[; ;./LedControl.h: 43: void ledSwitch(_Bool state, uint16_t time){
+"17
+[; ;./LedControl.h: 17: void ledSwitch(_Bool state, uint16_t time){
 [v _ledSwitch `(v ~T0 @X0 1 ef2`a`us ]
 {
 [e :U _ledSwitch ]
 [v _state `a ~T0 @X0 1 r1 ]
 [v _time `us ~T0 @X0 1 r2 ]
 [f ]
-"44
-[; ;./LedControl.h: 44:     PORTAbits.RA0 = state;
+"18
+[; ;./LedControl.h: 18:     PORTAbits.RA0 = state;
 [e = . . _PORTAbits 0 0 -> _state `uc ]
-"45
-[; ;./LedControl.h: 45:     DELAY_milliseconds(time);
+"20
+[; ;./LedControl.h: 20:     DELAY_milliseconds(time);
 [e ( _DELAY_milliseconds (1 _time ]
-"46
-[; ;./LedControl.h: 46:     printf("State is %d\n", state);
+"21
+[; ;./LedControl.h: 21:     printf("State is %d\n", state);
 [e ( _printf , (. :s 1C -> _state `i ]
-"47
-[; ;./LedControl.h: 47: }
+"22
+[; ;./LedControl.h: 22: }
 [e :UE 1547 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
-[; ;main.c: 51: void main(void){
+"5 main.c
+[; ;main.c: 5: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main.c: 53:     SYSTEM_Initialize();
+"6
+[; ;main.c: 6:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     ledInit();
+"11
+[; ;main.c: 11:     ledInit();
 [e ( _ledInit ..  ]
-"71
-[; ;main.c: 71:     while (1){
+"12
+[; ;main.c: 12:     while (1){
 [e :U 1550 ]
 {
-"72
-[; ;main.c: 72:         ledSwitch(1, 250);
+"13
+[; ;main.c: 13:         ledSwitch(1, 250);
 [e ( _ledSwitch (2 , -> -> 1 `i `a -> -> 250 `i `us ]
-"73
-[; ;main.c: 73:         ledSwitch(0, 250);
+"14
+[; ;main.c: 14:         ledSwitch(0, 250);
 [e ( _ledSwitch (2 , -> -> 0 `i `a -> -> 250 `i `us ]
-"74
-[; ;main.c: 74:     }
+"15
+[; ;main.c: 15:     }
 }
 [e :U 1549 ]
 [e $U 1550  ]
 [e :U 1551 ]
-"75
-[; ;main.c: 75:     return;
+"16
+[; ;main.c: 16:     return;
 [e $UE 1548  ]
-"76
-[; ;main.c: 76: }
+"17
+[; ;main.c: 17: }
 [e :UE 1548 ]
 }
 [p f _printf 8388736 ]

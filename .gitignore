@@ -1,5 +1,23 @@
 # .gitignore file
 
+# Ignore everything inside the dist folder
+dist/default/production/*
+
+# Ignore everything inside the nbproject folder
+nbproject/private/
+
+# Ignore everything that has the the .production. extension
+*.production.*
+
+
+
+#Ignore everythhing inside the .vscode folder
+.vscode/
+
+# Ignore everything inside the .settings folder
+.settings/
+
+
 # MPLAB X IDE (Netbeans) specific
 **/*.X/~*.*
 **/*.X/build/

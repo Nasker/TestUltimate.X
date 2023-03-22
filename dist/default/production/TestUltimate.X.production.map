@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\TestUltimate.X.production.sym \
   --cmf=dist/default/production\TestUltimate.X.production.cmf -z -Q18F45K80 \
-  -oC:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/default/production/TestUltimate.X.production.map \
-  --md=C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.dat -E1 \
+  --md=C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=01000h-010FFhx112 -AMEDIUMCONST=01000h-07FFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-0E40h -ABIGRAM=01h-0E40h \
@@ -29,7 +29,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o \
+  C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o \
   dist/default/production\TestUltimate.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Machine type is 18F45K80
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\OMARTI~1\AppData\Local\Temp\xcAslpg.o
+C:\Users\OMARTI~1\AppData\Local\Temp\xcAshu4.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 4C       4C        4        4       0
@@ -654,7 +654,7 @@ __smallconst                            smallconst   001000
 _abs                                    text10       001942
 _dbuf                                   bssBANK0     000066
 _dtoa                                   text5        001010
-_dtoa$1607                              cstackCOMRAM 000030
+_dtoa$1610                              cstackCOMRAM 000030
 _flags                                  bssCOMRAM    00005C
 _fputc                                  text8        0017A0
 _fputs                                  text7        0018FE

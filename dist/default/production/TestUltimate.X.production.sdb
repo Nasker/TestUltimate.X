@@ -3,11 +3,11 @@
 [d edition pro ]
 [d chip 18F45K80 ]
 [d frameptr 4065 ]
-"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _portsInit portsInit `(v  1 e 1 0 ]
-"20
+"21 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
 [v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
-"24
+"25
+[v _portBPinWrite portBPinWrite `(v  1 e 1 0 ]
+"29
 [v _portBPinRead portBPinRead `(a  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -35,7 +35,7 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"12 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 [v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
@@ -47,6 +47,8 @@
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 "165
 [v _CAN_transmit CAN_transmit `(uc  1 e 1 0 ]
+"243
+[v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
 "368
 [v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 s 4 convertReg2ExtendedCANid ]
 "389
@@ -137,7 +139,7 @@
 [v _RXM1EIDH RXM1EIDH `VEuc  1 e 1 @3838 ]
 "19895
 [v _RXM1EIDL RXM1EIDL `VEuc  1 e 1 @3839 ]
-[s S579 . 1 `uc 1 TXPRI 1 0 :2:0 
+[s S499 . 1 `uc 1 TXPRI 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXREQ 1 0 :1:3 
 `uc 1 TXERR 1 0 :1:4 
@@ -146,10 +148,10 @@
 `uc 1 TXBIF 1 0 :1:7 
 ]
 "20045
-[s S587 . 1 `uc 1 TXPRI0 1 0 :1:0 
+[s S507 . 1 `uc 1 TXPRI0 1 0 :1:0 
 `uc 1 TXPRI1 1 0 :1:1 
 ]
-[s S716 . 1 `uc 1 TXB2PRI0 1 0 :1:0 
+[s S636 . 1 `uc 1 TXB2PRI0 1 0 :1:0 
 `uc 1 TXB2PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB2REQ 1 0 :1:3 
@@ -158,8 +160,8 @@
 `uc 1 TXB2ABT 1 0 :1:6 
 `uc 1 TX2IF 1 0 :1:7 
 ]
-[u S725 . 1 `S579 1 . 1 0 `S587 1 . 1 0 `S716 1 . 1 0 ]
-[v _TXB2CONbits TXB2CONbits `VES725  1 e 1 @3840 ]
+[u S645 . 1 `S499 1 . 1 0 `S507 1 . 1 0 `S636 1 . 1 0 ]
+[v _TXB2CONbits TXB2CONbits `VES645  1 e 1 @3840 ]
 "20125
 [v _TXB2SIDH TXB2SIDH `VEuc  1 e 1 @3841 ]
 "20245
@@ -187,7 +189,7 @@
 "21173
 [v _TXB2D7 TXB2D7 `VEuc  1 e 1 @3853 ]
 "21476
-[s S658 . 1 `uc 1 TXB1PRI0 1 0 :1:0 
+[s S578 . 1 `uc 1 TXB1PRI0 1 0 :1:0 
 `uc 1 TXB1PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB1REQ 1 0 :1:3 
@@ -196,8 +198,8 @@
 `uc 1 TXB1ABT 1 0 :1:6 
 `uc 1 TX1IF 1 0 :1:7 
 ]
-[u S667 . 1 `S579 1 . 1 0 `S587 1 . 1 0 `S658 1 . 1 0 ]
-[v _TXB1CONbits TXB1CONbits `VES667  1 e 1 @3856 ]
+[u S587 . 1 `S499 1 . 1 0 `S507 1 . 1 0 `S578 1 . 1 0 ]
+[v _TXB1CONbits TXB1CONbits `VES587  1 e 1 @3856 ]
 "21556
 [v _TXB1SIDH TXB1SIDH `VEuc  1 e 1 @3857 ]
 "21676
@@ -225,7 +227,7 @@
 "22604
 [v _TXB1D7 TXB1D7 `VEuc  1 e 1 @3869 ]
 "22907
-[s S590 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
+[s S510 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
 `uc 1 TXB0PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB0REQ 1 0 :1:3 
@@ -234,8 +236,8 @@
 `uc 1 TXB0ABT 1 0 :1:6 
 `uc 1 TX0IF 1 0 :1:7 
 ]
-[u S599 . 1 `S579 1 . 1 0 `S587 1 . 1 0 `S590 1 . 1 0 ]
-[v _TXB0CONbits TXB0CONbits `VES599  1 e 1 @3872 ]
+[u S519 . 1 `S499 1 . 1 0 `S507 1 . 1 0 `S510 1 . 1 0 ]
+[v _TXB0CONbits TXB0CONbits `VES519  1 e 1 @3872 ]
 "22987
 [v _TXB0SIDH TXB0SIDH `VEuc  1 e 1 @3873 ]
 "23107
@@ -262,7 +264,7 @@
 [v _TXB0D6 TXB0D6 `VEuc  1 e 1 @3884 ]
 "24035
 [v _TXB0D7 TXB0D7 `VEuc  1 e 1 @3885 ]
-[s S871 . 1 `uc 1 FILHIT0 1 0 :1:0 
+[s S791 . 1 `uc 1 FILHIT0 1 0 :1:0 
 `uc 1 FILHIT1 1 0 :1:1 
 `uc 1 FILHIT2 1 0 :1:2 
 `uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
@@ -272,17 +274,17 @@
 `uc 1 RXFUL 1 0 :1:7 
 ]
 "24353
-[s S880 . 1 `uc 1 . 1 0 :3:0 
+[s S800 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXRTRRO 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXM0 1 0 :1:5 
 ]
-[s S885 . 1 `uc 1 . 1 0 :3:0 
+[s S805 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 FILHIT3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RTRRO 1 0 :1:5 
 ]
-[s S890 . 1 `uc 1 RXB1FILHIT0 1 0 :1:0 
+[s S810 . 1 `uc 1 RXB1FILHIT0 1 0 :1:0 
 `uc 1 RXB1FILHIT1 1 0 :1:1 
 `uc 1 RXB1FILHIT2 1 0 :1:2 
 `uc 1 RXB1FILHIT3 1 0 :1:3 
@@ -291,13 +293,13 @@
 `uc 1 RXB1M1 1 0 :1:6 
 `uc 1 RXB1FUL 1 0 :1:7 
 ]
-[s S899 . 1 `uc 1 . 1 0 :3:0 
+[s S819 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB1RTRR0 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXB1RTRRO 1 0 :1:5 
 ]
-[u S904 . 1 `S871 1 . 1 0 `S880 1 . 1 0 `S885 1 . 1 0 `S890 1 . 1 0 `S899 1 . 1 0 ]
-[v _RXB1CONbits RXB1CONbits `VES904  1 e 1 @3888 ]
+[u S824 . 1 `S791 1 . 1 0 `S800 1 . 1 0 `S805 1 . 1 0 `S810 1 . 1 0 `S819 1 . 1 0 ]
+[v _RXB1CONbits RXB1CONbits `VES824  1 e 1 @3888 ]
 "24468
 [v _RXB1SIDH RXB1SIDH `VEuc  1 e 1 @3889 ]
 "24588
@@ -330,7 +332,7 @@
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3932 ]
 "27074
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3933 ]
-[s S763 . 1 `uc 1 FILHIT0 1 0 :1:0 
+[s S683 . 1 `uc 1 FILHIT0 1 0 :1:0 
 `uc 1 JTOFF_FILHIT1 1 0 :1:1 
 `uc 1 RB0DBEN_FILHIT2 1 0 :1:2 
 `uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
@@ -340,21 +342,21 @@
 `uc 1 RXFUL 1 0 :1:7 
 ]
 "27767
-[s S772 . 1 `uc 1 . 1 0 :1:0 
+[s S692 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 JTOFF 1 0 :1:1 
 `uc 1 RB0DBEN 1 0 :1:2 
 `uc 1 RXRTRRO 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RTRRO 1 0 :1:5 
 ]
-[s S779 . 1 `uc 1 . 1 0 :1:0 
+[s S699 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 FILHIT1 1 0 :1:1 
 `uc 1 FILHIT2 1 0 :1:2 
 `uc 1 FILHIT3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXM0 1 0 :1:5 
 ]
-[s S786 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
+[s S706 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
 `uc 1 RXB0FILHIT1 1 0 :1:1 
 `uc 1 RXB0FILHIT2 1 0 :1:2 
 `uc 1 RXB0FILHIT3 1 0 :1:3 
@@ -363,13 +365,13 @@
 `uc 1 RXB0M1 1 0 :1:6 
 `uc 1 RXB0FUL 1 0 :1:7 
 ]
-[s S795 . 1 `uc 1 . 1 0 :3:0 
+[s S715 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0RTRR0 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXB0RTRRO 1 0 :1:5 
 ]
-[u S800 . 1 `S763 1 . 1 0 `S772 1 . 1 0 `S779 1 . 1 0 `S786 1 . 1 0 `S795 1 . 1 0 ]
-[v _RXB0CONbits RXB0CONbits `VES800  1 e 1 @3936 ]
+[u S720 . 1 `S683 1 . 1 0 `S692 1 . 1 0 `S699 1 . 1 0 `S706 1 . 1 0 `S715 1 . 1 0 ]
+[v _RXB0CONbits RXB0CONbits `VES720  1 e 1 @3936 ]
 "27902
 [v _RXB0SIDH RXB0SIDH `VEuc  1 e 1 @3937 ]
 "28022
@@ -402,7 +404,7 @@
 [v _CANCON CANCON `VEuc  1 e 1 @3951 ]
 "29256
 [v _CIOCON CIOCON `VEuc  1 e 1 @3952 ]
-[s S957 . 1 `uc 1 EWARN 1 0 :1:0 
+[s S877 . 1 `uc 1 EWARN 1 0 :1:0 
 `uc 1 RXWARN 1 0 :1:1 
 `uc 1 TXWARN 1 0 :1:2 
 `uc 1 RXBP 1 0 :1:3 
@@ -412,21 +414,21 @@
 `uc 1 RXB0OVFL 1 0 :1:7 
 ]
 "29331
-[s S966 . 1 `uc 1 . 1 0 :7:0 
+[s S886 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_FIFOEMPTY 1 0 :1:7 
 ]
-[s S969 . 1 `uc 1 . 1 0 :7:0 
+[s S889 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 nFIFOEMPTY 1 0 :1:7 
 ]
-[s S972 . 1 `uc 1 . 1 0 :6:0 
+[s S892 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RXBNOVFL 1 0 :1:6 
 `uc 1 FIFOEMPTY 1 0 :1:7 
 ]
-[u S976 . 1 `S957 1 . 1 0 `S966 1 . 1 0 `S969 1 . 1 0 `S972 1 . 1 0 ]
-[v _COMSTATbits COMSTATbits `VES976  1 e 1 @3953 ]
+[u S896 . 1 `S877 1 . 1 0 `S886 1 . 1 0 `S889 1 . 1 0 `S892 1 . 1 0 ]
+[v _COMSTATbits COMSTATbits `VES896  1 e 1 @3953 ]
 "29396
 [v _ECANCON ECANCON `VEuc  1 e 1 @3954 ]
-[s S376 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S296 . 1 `uc 1 RXB0IE 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 `uc 1 TXB0IE 1 0 :1:2 
 `uc 1 TXB1IE 1 0 :1:3 
@@ -436,14 +438,14 @@
 `uc 1 IRXIE 1 0 :1:7 
 ]
 "29556
-[s S385 . 1 `uc 1 FIFOWMIE 1 0 :1:0 
+[s S305 . 1 `uc 1 FIFOWMIE 1 0 :1:0 
 `uc 1 RXBnIE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBnIE 1 0 :1:4 
 ]
-[u S390 . 1 `S376 1 . 1 0 `S385 1 . 1 0 ]
-[v _PIE5bits PIE5bits `VES390  1 e 1 @3958 ]
-[s S408 . 1 `uc 1 RXB0IF 1 0 :1:0 
+[u S310 . 1 `S296 1 . 1 0 `S305 1 . 1 0 ]
+[v _PIE5bits PIE5bits `VES310  1 e 1 @3958 ]
+[s S328 . 1 `uc 1 RXB0IF 1 0 :1:0 
 `uc 1 RXB1IF 1 0 :1:1 
 `uc 1 TXB0IF 1 0 :1:2 
 `uc 1 TXB1IF 1 0 :1:3 
@@ -453,13 +455,13 @@
 `uc 1 IRXIF 1 0 :1:7 
 ]
 "29639
-[s S417 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
+[s S337 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
 `uc 1 RXBnIF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBnIF 1 0 :1:4 
 ]
-[u S422 . 1 `S408 1 . 1 0 `S417 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES422  1 e 1 @3959 ]
+[u S342 . 1 `S328 1 . 1 0 `S337 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES342  1 e 1 @3959 ]
 "29995
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "30074
@@ -488,30 +490,30 @@
 [v _REFOCON REFOCON `VEuc  1 e 1 @3994 ]
 "31472
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S273 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S193 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "36011
-[s S275 . 1 `uc 1 . 1 0 :1:0 
+[s S195 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
 "36011
-[s S278 . 1 `uc 1 . 1 0 :2:0 
+[s S198 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
 "36011
-[s S281 . 1 `uc 1 . 1 0 :3:0 
+[s S201 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
 "36011
-[s S284 . 1 `uc 1 . 1 0 :4:0 
+[s S204 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
 "36011
-[s S287 . 1 `uc 1 . 1 0 :5:0 
+[s S207 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_CM 1 0 :1:5 
 ]
 "36011
-[s S290 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S210 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -521,7 +523,7 @@
 `uc 1 IPEN 1 0 :1:7 
 ]
 "36011
-[s S299 . 1 `uc 1 BOR 1 0 :1:0 
+[s S219 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -529,10 +531,10 @@
 `uc 1 CM 1 0 :1:5 
 ]
 "36011
-[u S306 . 1 `S273 1 . 1 0 `S275 1 . 1 0 `S278 1 . 1 0 `S281 1 . 1 0 `S284 1 . 1 0 `S287 1 . 1 0 `S290 1 . 1 0 `S299 1 . 1 0 ]
+[u S226 . 1 `S193 1 . 1 0 `S195 1 . 1 0 `S198 1 . 1 0 `S201 1 . 1 0 `S204 1 . 1 0 `S207 1 . 1 0 `S210 1 . 1 0 `S219 1 . 1 0 ]
 "36011
 "36011
-[v _RCONbits RCONbits `VES306  1 e 1 @4048 ]
+[v _RCONbits RCONbits `VES226  1 e 1 @4048 ]
 "36176
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "36248
@@ -593,28 +595,25 @@
 [v _INTCONbits INTCONbits `VES138  1 e 1 @4082 ]
 "54 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
 [v _WakeUpInterruptHandler WakeUpInterruptHandler `*.37(v  1 s 2 WakeUpInterruptHandler ]
-"12 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-[s S204 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"19
-[u S216 . 14 `S204 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v main@msg msg `S216  1 a 14 26 ]
-"33
-} 0
-"13 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _portsInit portsInit `(v  1 e 1 0 ]
-{
+[s S484 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "18
+[u S496 . 14 `S484 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v main@msgRX msgRX `S496  1 a 14 40 ]
+"17
+[v main@msgTX msgTX `S496  1 a 14 26 ]
+"38
 } 0
-"20
-[v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
+"25 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+[v _portBPinWrite portBPinWrite `(v  1 e 1 0 ]
 {
-[v portAPinWrite@pin pin `uc  1 a 1 wreg ]
-[v portAPinWrite@pin pin `uc  1 a 1 wreg ]
-[v portAPinWrite@state state `a  1 p 1 2 ]
-[v portAPinWrite@pin pin `uc  1 a 1 5 ]
-"22
+[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portBPinWrite@state state `a  1 p 1 2 ]
+[v portBPinWrite@pin pin `uc  1 a 1 5 ]
+"27
 } 0
 "50 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -664,10 +663,10 @@
 [v CAN_transmit@tempEIDL tempEIDL `uc  1 a 1 23 ]
 "166
 [v CAN_transmit@tempEIDH tempEIDH `uc  1 a 1 22 ]
-[s S204 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+[s S484 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "165
-[u S216 . 14 `S204 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v CAN_transmit@tempCanMsg tempCanMsg `*.39S216  1 p 2 20 ]
+[u S496 . 14 `S484 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v CAN_transmit@tempCanMsg tempCanMsg `*.39S496  1 p 2 20 ]
 "241
 } 0
 "402
@@ -683,6 +682,52 @@
 [v convertCANid2Reg@passedInSIDH passedInSIDH `*.39uc  1 p 2 11 ]
 [v convertCANid2Reg@passedInSIDL passedInSIDL `*.39uc  1 p 2 13 ]
 "437
+} 0
+"243
+[v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
+{
+"245
+[v CAN_receive@returnValue returnValue `uc  1 a 1 23 ]
+[s S484 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+"243
+[u S496 . 14 `S484 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v CAN_receive@tempCanMsg tempCanMsg `*.39S496  1 p 2 21 ]
+"303
+} 0
+"389
+[v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 s 4 convertReg2StandardCANid ]
+{
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
+"392
+[v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 13 ]
+"391
+[v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 9 ]
+"389
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
+[v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 2 ]
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 8 ]
+"400
+} 0
+"368
+[v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 s 4 convertReg2ExtendedCANid ]
+{
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
+"371
+[v convertReg2ExtendedCANid@ConvertedID ConvertedID `ul  1 a 4 17 ]
+"370
+[v convertReg2ExtendedCANid@returnValue returnValue `ul  1 a 4 11 ]
+"373
+[v convertReg2ExtendedCANid@CAN_standardLo_ID_hi3bits CAN_standardLo_ID_hi3bits `uc  1 a 1 16 ]
+"372
+[v convertReg2ExtendedCANid@CAN_standardLo_ID_lo2bits CAN_standardLo_ID_lo2bits `uc  1 a 1 15 ]
+"368
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
+[v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 2 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 3 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 4 ]
+"371
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 10 ]
+"387
 } 0
 "58 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]

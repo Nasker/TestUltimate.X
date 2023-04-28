@@ -20520,9 +20520,9 @@ unsigned char __t3rd16on(void);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 302 "./mcc_generated_files/pin_manager.h"
+# 330 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 314 "./mcc_generated_files/pin_manager.h"
+# 342 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -20747,11 +20747,16 @@ void portsInit(){
 
     TRISA = 0x00;
 
-    TRISB = 0xFF;
+    TRISB = 0xCB;
+
 }
 
 void portAPinWrite(uint8_t pin, _Bool state){
     PORTA = (state << pin);
+}
+
+void portBPinWrite(uint8_t pin, _Bool state){
+    PORTB = (state << pin);
 }
 
 _Bool portBPinRead(uint8_t pin){
@@ -20769,26 +20774,30 @@ void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
     portAPinWrite(pinWrite, state);
 }
 # 2 "main.c" 2
-# 12 "main.c"
+# 13 "main.c"
 void main(void){
     SYSTEM_Initialize();
-
-
-
-
-    portsInit();
-    uCAN_MSG msg;
-    msg.frame.idType = 1;
-    msg.frame.id = 0x123;
-    msg.frame.dlc = 1;
-    msg.frame.data0 = 0x00;
+    (INTCONbits.GIE = 1);
+    (INTCONbits.PEIE = 1);
+    uCAN_MSG msgTX;
+    uCAN_MSG msgRX;
+    msgTX.frame.id = 0x69;
+    msgTX.frame.idType = 1;
+    msgTX.frame.dlc = 0x01;
+    msgTX.frame.data0 = 0xFE;
+    CAN_transmit(&msgTX);
+    portBPinWrite(1, 0);
     while (1){
-      CAN_transmit(&msg);
-      msg.frame.data0++;
-      portAPinWrite(2, 1);
-      DELAY_milliseconds(500);
-      portAPinWrite(2, 0);
-      DELAY_milliseconds(500);
+      if(CAN_receive(&msgRX)){
+        msgRX.frame.data0 *= 2;
+        msgRX.frame.data1 /= 2;
+        msgRX.frame.data2 += 2;
+        msgRX.frame.data3 -= 2;
+        CAN_transmit(&msgRX);
+      }
+      CAN_transmit(&msgTX);
+      msgTX.frame.data0++;
+      DELAY_milliseconds(1000);
     }
     return;
 }

@@ -135,6 +135,17 @@
 #define IO_RA5_SetAnalogMode()      do { ANCON0bits.ANSEL4 = 1; } while(0)
 #define IO_RA5_SetDigitalMode()     do { ANCON0bits.ANSEL4 = 0; } while(0)
 
+// get/set IO_RA6 aliases
+#define IO_RA6_TRIS                 TRISAbits.TRISA6
+#define IO_RA6_LAT                  LATAbits.LATA6
+#define IO_RA6_PORT                 PORTAbits.RA6
+#define IO_RA6_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
+#define IO_RA6_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
+#define IO_RA6_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
+#define IO_RA6_GetValue()           PORTAbits.RA6
+#define IO_RA6_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
+#define IO_RA6_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
+
 // get/set IO_RA7 aliases
 #define IO_RA7_TRIS                 TRISAbits.TRISA7
 #define IO_RA7_LAT                  LATAbits.LATA7
@@ -162,6 +173,23 @@
 #define IO_RB0_ResetPullup()        do { WPUBbits.WPUB0 = 0; } while(0)
 #define IO_RB0_SetAnalogMode()      do { ANCON1bits.ANSEL10 = 1; } while(0)
 #define IO_RB0_SetDigitalMode()     do { ANCON1bits.ANSEL10 = 0; } while(0)
+
+// get/set IO_RB1 aliases
+#define IO_RB1_TRIS                 TRISBbits.TRISB1
+#define IO_RB1_LAT                  LATBbits.LATB1
+#define IO_RB1_PORT                 PORTBbits.RB1
+#define IO_RB1_WPU                  WPUBbits.WPUB1
+#define IO_RB1_ANS                  ANCON1bits.ANSEL8
+#define IO_RB1_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
+#define IO_RB1_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
+#define IO_RB1_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
+#define IO_RB1_GetValue()           PORTBbits.RB1
+#define IO_RB1_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
+#define IO_RB1_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
+#define IO_RB1_SetPullup()          do { WPUBbits.WPUB1 = 1; } while(0)
+#define IO_RB1_ResetPullup()        do { WPUBbits.WPUB1 = 0; } while(0)
+#define IO_RB1_SetAnalogMode()      do { ANCON1bits.ANSEL8 = 1; } while(0)
+#define IO_RB1_SetDigitalMode()     do { ANCON1bits.ANSEL8 = 0; } while(0)
 
 // get/set RB2 procedures
 #define RB2_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)

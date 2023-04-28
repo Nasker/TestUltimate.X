@@ -3,30 +3,35 @@
 
 #define PIN_READ   0
 #define PIN_WRITE  2
+#define STBY_CAN_PIN 1
 
-#define DELAY_PERIOD 500
+#define DELAY_PERIOD 1000
 
-#define MESSAGE_ID 0x123
+#define MESSAGE_ID 0x69
 
 
 void main(void){
     SYSTEM_Initialize();
-    //INTERRUPT_GlobalInterruptEnable();
-    //INTERRUPT_GlobalInterruptDisable();
-    //INTERRUPT_PeripheralInterruptEnable();
-    //INTERRUPT_PeripheralInterruptDisable();
-    portsInit();
-    uCAN_MSG msg;
-    msg.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-    msg.frame.id = MESSAGE_ID;
-    msg.frame.dlc = 1;
-    msg.frame.data0 = 0x00;
+    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
+    uCAN_MSG msgTX;
+    uCAN_MSG msgRX;
+    msgTX.frame.id = MESSAGE_ID;
+    msgTX.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    msgTX.frame.dlc = 0x01;
+    msgTX.frame.data0 = 0xFE;
+    CAN_transmit(&msgTX);
+    portBPinWrite(STBY_CAN_PIN, false);
     while (true){
-      CAN_transmit(&msg);
-      msg.frame.data0++;
-      portAPinWrite(PIN_WRITE, true);
-      DELAY_milliseconds(DELAY_PERIOD);
-      portAPinWrite(PIN_WRITE, false);
+      if(CAN_receive(&msgRX)){
+        msgRX.frame.data0 *= 2;
+        msgRX.frame.data1 /= 2;
+        msgRX.frame.data2 += 2;
+        msgRX.frame.data3 -= 2;
+        CAN_transmit(&msgRX);
+      }
+      CAN_transmit(&msgTX);
+      msgTX.frame.data0++;
       DELAY_milliseconds(DELAY_PERIOD);
     }
     return;

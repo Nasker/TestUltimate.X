@@ -21,6 +21,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"37210 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37210:     struct {
+[s S1508 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1508 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"37220
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37220:     struct {
+[s S1509 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1509 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"37230
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37230:     struct {
+[s S1510 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1510 . . GIEL GIEH ]
+"37209
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37209: typedef union {
+[u S1507 `S1508 1 `S1509 1 `S1510 1 ]
+[n S1507 . . . . ]
+"37236
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37236: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS1507 ~T0 @X0 0 e@4082 ]
 "64 ./mcc_generated_files/ecan.h
 [; ;./mcc_generated_files/ecan.h: 64:     struct {
 [s S1545 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
@@ -32,6 +51,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "158
 [; ;./mcc_generated_files/ecan.h: 158: uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
 [v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1544 ]
+"182
+[; ;./mcc_generated_files/ecan.h: 182: uint8_t CAN_receive(uCAN_MSG *tempCanMsg);
+[v _CAN_receive `(uc ~T0 @X0 0 ef1`*S1544 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 54: __asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
@@ -1434,44 +1456,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./LedControl.h: 15:     TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
 "17
-[; ;./LedControl.h: 17:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
-"18
-[; ;./LedControl.h: 18: }
+[; ;./LedControl.h: 17:     TRISB = 0xCB;
+[e = _TRISB -> -> 203 `i `uc ]
+"19
+[; ;./LedControl.h: 19: }
 [e :UE 1546 ]
 }
-"20
-[; ;./LedControl.h: 20: void portAPinWrite(uint8_t pin, _Bool state){
+"21
+[; ;./LedControl.h: 21: void portAPinWrite(uint8_t pin, _Bool state){
 [v _portAPinWrite `(v ~T0 @X0 1 ef2`uc`a ]
 {
 [e :U _portAPinWrite ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _state `a ~T0 @X0 1 r2 ]
 [f ]
-"21
-[; ;./LedControl.h: 21:     PORTA = (state << pin);
-[e = _PORTA -> << -> _state `i -> _pin `i `uc ]
 "22
-[; ;./LedControl.h: 22: }
+[; ;./LedControl.h: 22:     PORTA = (state << pin);
+[e = _PORTA -> << -> _state `i -> _pin `i `uc ]
+"23
+[; ;./LedControl.h: 23: }
 [e :UE 1547 ]
 }
-"24
-[; ;./LedControl.h: 24: _Bool portBPinRead(uint8_t pin){
+"25
+[; ;./LedControl.h: 25: void portBPinWrite(uint8_t pin, _Bool state){
+[v _portBPinWrite `(v ~T0 @X0 1 ef2`uc`a ]
+{
+[e :U _portBPinWrite ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[v _state `a ~T0 @X0 1 r2 ]
+[f ]
+"26
+[; ;./LedControl.h: 26:     PORTB = (state << pin);
+[e = _PORTB -> << -> _state `i -> _pin `i `uc ]
+"27
+[; ;./LedControl.h: 27: }
+[e :UE 1548 ]
+}
+"29
+[; ;./LedControl.h: 29: _Bool portBPinRead(uint8_t pin){
 [v _portBPinRead `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _portBPinRead ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-"25
-[; ;./LedControl.h: 25:     return PORTB & (1 << pin);
+"30
+[; ;./LedControl.h: 30:     return PORTB & (1 << pin);
 [e ) -> & -> _PORTB `i << -> 1 `i -> _pin `i `a ]
-[e $UE 1548  ]
-"26
-[; ;./LedControl.h: 26: }
-[e :UE 1548 ]
+[e $UE 1549  ]
+"31
+[; ;./LedControl.h: 31: }
+[e :UE 1549 ]
 }
-"28
-[; ;./LedControl.h: 28: void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
+"33
+[; ;./LedControl.h: 33: void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
 [v _portAPinWrite_ms `(v ~T0 @X0 1 ef3`uc`a`us ]
 {
 [e :U _portAPinWrite_ms ]
@@ -1479,100 +1516,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _state `a ~T0 @X0 1 r2 ]
 [v _time `us ~T0 @X0 1 r3 ]
 [f ]
-"29
-[; ;./LedControl.h: 29:     portAPinWrite(pin, state);
-[e ( _portAPinWrite (2 , _pin _state ]
-"30
-[; ;./LedControl.h: 30:     DELAY_milliseconds(time);
-[e ( _DELAY_milliseconds (1 _time ]
-"31
-[; ;./LedControl.h: 31:     printf("State is %d\n", state);
-[e ( _printf , (. :s 1C -> _state `i ]
-"32
-[; ;./LedControl.h: 32: }
-[e :UE 1549 ]
-}
 "34
-[; ;./LedControl.h: 34: void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
+[; ;./LedControl.h: 34:     portAPinWrite(pin, state);
+[e ( _portAPinWrite (2 , _pin _state ]
+"35
+[; ;./LedControl.h: 35:     DELAY_milliseconds(time);
+[e ( _DELAY_milliseconds (1 _time ]
+"36
+[; ;./LedControl.h: 36:     printf("State is %d\n", state);
+[e ( _printf , (. :s 1C -> _state `i ]
+"37
+[; ;./LedControl.h: 37: }
+[e :UE 1550 ]
+}
+"39
+[; ;./LedControl.h: 39: void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
 [v _bridgePortAPinToPortBPin `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _bridgePortAPinToPortBPin ]
 [v _pinRead `uc ~T0 @X0 1 r1 ]
 [v _pinWrite `uc ~T0 @X0 1 r2 ]
 [f ]
-"35
-[; ;./LedControl.h: 35:     _Bool state = portBPinRead(pinRead);
+"40
+[; ;./LedControl.h: 40:     _Bool state = portBPinRead(pinRead);
 [v _state `a ~T0 @X0 1 a ]
 [e = _state ( _portBPinRead (1 _pinRead ]
-"36
-[; ;./LedControl.h: 36:     portAPinWrite(pinWrite, state);
+"41
+[; ;./LedControl.h: 41:     portAPinWrite(pinWrite, state);
 [e ( _portAPinWrite (2 , _pinWrite _state ]
-"37
-[; ;./LedControl.h: 37: }
-[e :UE 1550 ]
+"42
+[; ;./LedControl.h: 42: }
+[e :UE 1551 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12 main.c
-[; ;main.c: 12: void main(void){
+"13 main.c
+[; ;main.c: 13: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"13
-[; ;main.c: 13:     SYSTEM_Initialize();
+"14
+[; ;main.c: 14:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
+"15
+[; ;main.c: 15:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"16
+[; ;main.c: 16:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"17
+[; ;main.c: 17:     uCAN_MSG msgTX;
+[v _msgTX `S1544 ~T0 @X0 1 a ]
 "18
-[; ;main.c: 18:     portsInit();
-[e ( _portsInit ..  ]
+[; ;main.c: 18:     uCAN_MSG msgRX;
+[v _msgRX `S1544 ~T0 @X0 1 a ]
 "19
-[; ;main.c: 19:     uCAN_MSG msg;
-[v _msg `S1544 ~T0 @X0 1 a ]
+[; ;main.c: 19:     msgTX.frame.id = 0x69;
+[e = . . _msgTX 0 1 -> -> -> 105 `i `l `ul ]
 "20
-[; ;main.c: 20:     msg.frame.idType = 1;
-[e = . . _msg 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 20:     msgTX.frame.idType = 1;
+[e = . . _msgTX 0 0 -> -> 1 `i `uc ]
 "21
-[; ;main.c: 21:     msg.frame.id = 0x123;
-[e = . . _msg 0 1 -> -> -> 291 `i `l `ul ]
+[; ;main.c: 21:     msgTX.frame.dlc = 0x01;
+[e = . . _msgTX 0 2 -> -> 1 `i `uc ]
 "22
-[; ;main.c: 22:     msg.frame.dlc = 1;
-[e = . . _msg 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 22:     msgTX.frame.data0 = 0xFE;
+[e = . . _msgTX 0 3 -> -> 254 `i `uc ]
 "23
-[; ;main.c: 23:     msg.frame.data0 = 0x00;
-[e = . . _msg 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 23:     CAN_transmit(&msgTX);
+[e ( _CAN_transmit (1 &U _msgTX ]
 "24
-[; ;main.c: 24:     while (1){
-[e :U 1553 ]
-{
+[; ;main.c: 24:     portBPinWrite(1, 0);
+[e ( _portBPinWrite (2 , -> -> 1 `i `uc -> -> 0 `i `a ]
 "25
-[; ;main.c: 25:       CAN_transmit(&msg);
-[e ( _CAN_transmit (1 &U _msg ]
-"26
-[; ;main.c: 26:       msg.frame.data0++;
-[e ++ . . _msg 0 3 -> -> 1 `i `uc ]
-"27
-[; ;main.c: 27:       portAPinWrite(2, 1);
-[e ( _portAPinWrite (2 , -> -> 2 `i `uc -> -> 1 `i `a ]
-"28
-[; ;main.c: 28:       DELAY_milliseconds(500);
-[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
-"29
-[; ;main.c: 29:       portAPinWrite(2, 0);
-[e ( _portAPinWrite (2 , -> -> 2 `i `uc -> -> 0 `i `a ]
-"30
-[; ;main.c: 30:       DELAY_milliseconds(500);
-[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
-"31
-[; ;main.c: 31:     }
-}
-[e :U 1552 ]
-[e $U 1553  ]
+[; ;main.c: 25:     while (1){
 [e :U 1554 ]
+{
+"26
+[; ;main.c: 26:       if(CAN_receive(&msgRX)){
+[e $ ! != -> ( _CAN_receive (1 &U _msgRX `i -> 0 `i 1556  ]
+{
+"27
+[; ;main.c: 27:         msgRX.frame.data0 *= 2;
+[e =* . . _msgRX 0 3 -> -> 2 `i `uc ]
+"28
+[; ;main.c: 28:         msgRX.frame.data1 /= 2;
+[e =/ . . _msgRX 0 4 -> 2 `i ]
+"29
+[; ;main.c: 29:         msgRX.frame.data2 += 2;
+[e =+ . . _msgRX 0 5 -> -> 2 `i `uc ]
+"30
+[; ;main.c: 30:         msgRX.frame.data3 -= 2;
+[e =- . . _msgRX 0 6 -> -> 2 `i `uc ]
+"31
+[; ;main.c: 31:         CAN_transmit(&msgRX);
+[e ( _CAN_transmit (1 &U _msgRX ]
 "32
-[; ;main.c: 32:     return;
-[e $UE 1551  ]
+[; ;main.c: 32:       }
+}
+[e :U 1556 ]
 "33
-[; ;main.c: 33: }
-[e :UE 1551 ]
+[; ;main.c: 33:       CAN_transmit(&msgTX);
+[e ( _CAN_transmit (1 &U _msgTX ]
+"34
+[; ;main.c: 34:       msgTX.frame.data0++;
+[e ++ . . _msgTX 0 3 -> -> 1 `i `uc ]
+"35
+[; ;main.c: 35:       DELAY_milliseconds(1000);
+[e ( _DELAY_milliseconds (1 -> -> 1000 `i `us ]
+"36
+[; ;main.c: 36:     }
+}
+[e :U 1553 ]
+[e $U 1554  ]
+[e :U 1555 ]
+"37
+[; ;main.c: 37:     return;
+[e $UE 1552  ]
+"38
+[; ;main.c: 38: }
+[e :UE 1552 ]
 }
 [p f _printf 8388736 ]
 [a 1C 83 116 97 116 101 32 105 115 32 37 100 10 0 ]

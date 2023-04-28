@@ -14,11 +14,16 @@ void portsInit(){
     // initialize the GPIO A as an output
     TRISA = 0x00;
     //initialize the GPIO B as an input
-    TRISB = 0xFF;
+    TRISB = 0xCB;
+
 }
 
 void portAPinWrite(uint8_t pin, bool state){
     PORTA = (state << pin);
+}
+
+void portBPinWrite(uint8_t pin, bool state){
+    PORTB = (state << pin);
 }
 
 bool portBPinRead(uint8_t pin){

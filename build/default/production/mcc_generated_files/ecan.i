@@ -20630,7 +20630,7 @@ void ECAN_Initialize(void)
     RXF5SIDH = 0x00;
     RXF5SIDL = 0x00;
 # 141 "mcc_generated_files/ecan.c"
-    BRGCON1 = 0x18;
+    BRGCON1 = 0x00;
     BRGCON2 = 0x98;
     BRGCON3 = 0x01;
 

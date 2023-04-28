@@ -21,6 +21,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"64 ./mcc_generated_files/ecan.h
+[; ;./mcc_generated_files/ecan.h: 64:     struct {
+[s S1545 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1545 . idType id dlc data0 data1 data2 data3 data4 data5 data6 data7 ]
+"62
+[; ;./mcc_generated_files/ecan.h: 62: typedef union {
+[u S1544 `S1545 1 `uc -> 14 `i ]
+[n S1544 . frame array ]
+"158
+[; ;./mcc_generated_files/ecan.h: 158: uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
+[v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1544 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 54: __asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
@@ -1501,47 +1512,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1550 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"10 main.c
-[; ;main.c: 10: void main(void){
+"12 main.c
+[; ;main.c: 12: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"11
-[; ;main.c: 11:     SYSTEM_Initialize();
+"13
+[; ;main.c: 13:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"16
-[; ;main.c: 16:     portsInit();
+"18
+[; ;main.c: 18:     portsInit();
 [e ( _portsInit ..  ]
-"17
-[; ;main.c: 17:     while (1){
+"19
+[; ;main.c: 19:     uCAN_MSG msg;
+[v _msg `S1544 ~T0 @X0 1 a ]
+"20
+[; ;main.c: 20:     msg.frame.idType = 1;
+[e = . . _msg 0 0 -> -> 1 `i `uc ]
+"21
+[; ;main.c: 21:     msg.frame.id = 0x123;
+[e = . . _msg 0 1 -> -> -> 291 `i `l `ul ]
+"22
+[; ;main.c: 22:     msg.frame.dlc = 1;
+[e = . . _msg 0 2 -> -> 1 `i `uc ]
+"23
+[; ;main.c: 23:     msg.frame.data0 = 0x00;
+[e = . . _msg 0 3 -> -> 0 `i `uc ]
+"24
+[; ;main.c: 24:     while (1){
 [e :U 1553 ]
 {
-"18
-[; ;main.c: 18:       if(portBPinRead(0)){
-[e $ ! != -> ( _portBPinRead (1 -> -> 0 `i `uc `i -> 0 `i 1555  ]
-{
-"19
-[; ;main.c: 19:         portAPinWrite_ms(2, 1, 250);
-[e ( _portAPinWrite_ms (3 , , -> -> 2 `i `uc -> -> 1 `i `a -> -> 250 `i `us ]
-"20
-[; ;main.c: 20:         portAPinWrite_ms(2, 0, 250);
-[e ( _portAPinWrite_ms (3 , , -> -> 2 `i `uc -> -> 0 `i `a -> -> 250 `i `us ]
-"21
-[; ;main.c: 21:       }
-}
-[e :U 1555 ]
-"22
-[; ;main.c: 22:     }
+"25
+[; ;main.c: 25:       CAN_transmit(&msg);
+[e ( _CAN_transmit (1 &U _msg ]
+"26
+[; ;main.c: 26:       msg.frame.data0++;
+[e ++ . . _msg 0 3 -> -> 1 `i `uc ]
+"27
+[; ;main.c: 27:       portAPinWrite(2, 1);
+[e ( _portAPinWrite (2 , -> -> 2 `i `uc -> -> 1 `i `a ]
+"28
+[; ;main.c: 28:       DELAY_milliseconds(500);
+[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
+"29
+[; ;main.c: 29:       portAPinWrite(2, 0);
+[e ( _portAPinWrite (2 , -> -> 2 `i `uc -> -> 0 `i `a ]
+"30
+[; ;main.c: 30:       DELAY_milliseconds(500);
+[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
+"31
+[; ;main.c: 31:     }
 }
 [e :U 1552 ]
 [e $U 1553  ]
 [e :U 1554 ]
-"23
-[; ;main.c: 23:     return;
+"32
+[; ;main.c: 32:     return;
 [e $UE 1551  ]
-"24
-[; ;main.c: 24: }
+"33
+[; ;main.c: 33: }
 [e :UE 1551 ]
 }
 [p f _printf 8388736 ]

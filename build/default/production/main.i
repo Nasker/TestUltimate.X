@@ -20769,14 +20769,7 @@ void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
     portAPinWrite(pinWrite, state);
 }
 # 2 "main.c" 2
-
-
-
-
-
-
-
-
+# 12 "main.c"
 void main(void){
     SYSTEM_Initialize();
 
@@ -20784,11 +20777,18 @@ void main(void){
 
 
     portsInit();
+    uCAN_MSG msg;
+    msg.frame.idType = 1;
+    msg.frame.id = 0x123;
+    msg.frame.dlc = 1;
+    msg.frame.data0 = 0x00;
     while (1){
-      if(portBPinRead(0)){
-        portAPinWrite_ms(2, 1, 250);
-        portAPinWrite_ms(2, 0, 250);
-      }
+      CAN_transmit(&msg);
+      msg.frame.data0++;
+      portAPinWrite(2, 1);
+      DELAY_milliseconds(500);
+      portAPinWrite(2, 0);
+      DELAY_milliseconds(500);
     }
     return;
 }

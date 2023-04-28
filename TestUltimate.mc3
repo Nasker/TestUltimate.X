@@ -105,7 +105,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canBaudComboBox"/>
-         <value>20kbps</value>
+         <value>500kbps</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canClockFreqKey"/>
@@ -136,10 +136,6 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canNoscKey"/>
-         <value></value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canSJWComboBox"/>
          <value>1 x TQ</value>
       </entry>
@@ -153,10 +149,6 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="clockFreqKey"/>
-         <value>8000000</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="extOscFreqKey"/>
          <value>8000000</value>
       </entry>
       <entry>
@@ -3529,7 +3521,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN" registerAlias="BRGCON1"/>
-         <value>24</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN" registerAlias="BRGCON2"/>
@@ -5489,7 +5481,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN" registerAlias="BRGCON1" settingAlias="BRP"/>
-         <value>TQ = (2 x 25)/FOSC</value>
+         <value>TQ = (2 x 1)/FOSC</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN" registerAlias="BRGCON1" settingAlias="SJW"/>
@@ -12047,7 +12039,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\ecan.c</file>
-         <hash>c44f6efcf0075eea824b7d634a9a728dba81a8009e6d0a466e5bcdc2e46acc57</hash>
+         <hash>df867d40522bc1b876d74136f5e77fba8a67ace2cc3aa104b20b66c8cdaa8228</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\examples\DELAY_example.h</file>

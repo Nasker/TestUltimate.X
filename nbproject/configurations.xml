@@ -13,9 +13,9 @@
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
         <itemPath>mcc_generated_files/device_config.h</itemPath>
+        <itemPath>mcc_generated_files/delay.h</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
         <itemPath>mcc_generated_files/ecan.h</itemPath>
-        <itemPath>mcc_generated_files/delay.h</itemPath>
       </logicalFolder>
       <itemPath>LedControl.h</itemPath>
     </logicalFolder>
@@ -38,9 +38,9 @@
         <itemPath>mcc_generated_files/device_config.c</itemPath>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/pin_manager.c</itemPath>
+        <itemPath>mcc_generated_files/delay.c</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
         <itemPath>mcc_generated_files/ecan.c</itemPath>
-        <itemPath>mcc_generated_files/delay.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

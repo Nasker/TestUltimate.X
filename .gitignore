@@ -1,27 +1,25 @@
 # .gitignore file
 
 # Ignore everything inside the dist folder
-dist/default/production/*
+dist/
 
 # Ignore everything inside the nbproject folder
 nbproject/private/
 
-# Ignore everything that has the the .production. extension
-*.production.*
-
-
-
 #Ignore everythhing inside the .vscode folder
 .vscode/
+build/
+default/
+dist/
 
 # Ignore everything inside the .settings folder
-.settings/
+.settings/**/*.X/debug/
+
 
 
 # MPLAB X IDE (Netbeans) specific
 **/*.X/~*.*
 **/*.X/build/
-**/*.X/debug/
 **/*.X/dist/
 **/*.X/disassembly/
 **/*.X/.generated_files/
@@ -38,7 +36,6 @@ nbproject/private/
 
 # Executables
 *.exe
-
 
 # KDE specific
 .directory

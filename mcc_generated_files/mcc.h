@@ -53,6 +53,8 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
+#include "eccp1.h"
+#include "adc.h"
 #include "delay.h"
 #include "ecan.h"
 

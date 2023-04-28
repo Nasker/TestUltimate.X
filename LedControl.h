@@ -30,6 +30,10 @@ bool portBPinRead(uint8_t pin){
     return PORTB & (1 << pin);
 }
 
+bool portCPinRead(uint8_t pin){
+    return PORTC & (1 << pin);
+}
+
 void portAPinWrite_ms(uint8_t pin, bool state, uint16_t time){
     portAPinWrite(pin, state);
     DELAY_milliseconds(time);

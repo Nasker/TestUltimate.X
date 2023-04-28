@@ -157,22 +157,22 @@
 #define IO_RA7_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
 #define IO_RA7_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
 
-// get/set IO_RB0 aliases
-#define IO_RB0_TRIS                 TRISBbits.TRISB0
-#define IO_RB0_LAT                  LATBbits.LATB0
-#define IO_RB0_PORT                 PORTBbits.RB0
-#define IO_RB0_WPU                  WPUBbits.WPUB0
-#define IO_RB0_ANS                  ANCON1bits.ANSEL10
-#define IO_RB0_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
-#define IO_RB0_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
-#define IO_RB0_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
-#define IO_RB0_GetValue()           PORTBbits.RB0
-#define IO_RB0_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
-#define IO_RB0_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
-#define IO_RB0_SetPullup()          do { WPUBbits.WPUB0 = 1; } while(0)
-#define IO_RB0_ResetPullup()        do { WPUBbits.WPUB0 = 0; } while(0)
-#define IO_RB0_SetAnalogMode()      do { ANCON1bits.ANSEL10 = 1; } while(0)
-#define IO_RB0_SetDigitalMode()     do { ANCON1bits.ANSEL10 = 0; } while(0)
+// get/set channel_AN10 aliases
+#define channel_AN10_TRIS                 TRISBbits.TRISB0
+#define channel_AN10_LAT                  LATBbits.LATB0
+#define channel_AN10_PORT                 PORTBbits.RB0
+#define channel_AN10_WPU                  WPUBbits.WPUB0
+#define channel_AN10_ANS                  ANCON1bits.ANSEL10
+#define channel_AN10_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
+#define channel_AN10_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
+#define channel_AN10_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
+#define channel_AN10_GetValue()           PORTBbits.RB0
+#define channel_AN10_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
+#define channel_AN10_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
+#define channel_AN10_SetPullup()          do { WPUBbits.WPUB0 = 1; } while(0)
+#define channel_AN10_ResetPullup()        do { WPUBbits.WPUB0 = 0; } while(0)
+#define channel_AN10_SetAnalogMode()      do { ANCON1bits.ANSEL10 = 1; } while(0)
+#define channel_AN10_SetDigitalMode()     do { ANCON1bits.ANSEL10 = 0; } while(0)
 
 // get/set IO_RB1 aliases
 #define IO_RB1_TRIS                 TRISBbits.TRISB1

@@ -20690,11 +20690,42 @@ char *tempnam(const char *, const char *);
 void INTERRUPT_Initialize (void);
 # 55 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/eccp1.h" 1
+# 59 "mcc_generated_files/eccp1.h"
+void ECCP1_Initialize(void);
+# 56 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/adc.h" 1
+# 72 "mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
+# 86 "mcc_generated_files/adc.h"
+typedef enum
+{
+    channel_CTMU = 0x1C,
+    channel_Temp_diode = 0x1D,
+    channel_Vdd_core = 0x1E,
+    channel_1_024V_bandgap = 0x1F,
+    channel_AN10 = 0xa
+} adc_channel_t;
+# 128 "mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 157 "mcc_generated_files/adc.h"
+void ADC_StartConversion(adc_channel_t channel);
+# 189 "mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone(void);
+# 222 "mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 252 "mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 280 "mcc_generated_files/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 57 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/delay.h" 1
 # 34 "mcc_generated_files/delay.h"
 void DELAY_milliseconds(uint16_t milliseconds);
 void DELAY_microseconds(uint16_t microseconds);
-# 56 "mcc_generated_files/mcc.h" 2
+# 58 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/ecan.h" 1
 # 62 "mcc_generated_files/ecan.h"
@@ -20735,10 +20766,10 @@ uint8_t CAN_isTXErrorPassive(void);
 void ECAN_SetWakeUpInterruptHandler(void (*handler)(void));
 # 331 "mcc_generated_files/ecan.h"
 void ECAN_WAKI_ISR(void);
-# 57 "mcc_generated_files/mcc.h" 2
-# 72 "mcc_generated_files/mcc.h"
+# 59 "mcc_generated_files/mcc.h" 2
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mcc.h"
+# 87 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -20750,6 +20781,8 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    ECCP1_Initialize();
+    ADC_Initialize();
     ECAN_Initialize();
 }
 

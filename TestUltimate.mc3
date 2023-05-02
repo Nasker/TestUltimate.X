@@ -161,7 +161,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="dependentModuleKey"/>
-         <value>1</value>
+         <value>3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="localClockFreq"/>
@@ -576,10 +576,6 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canNoscKey"/>
-         <value></value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="canSJWComboBox"/>
          <value>1 x TQ</value>
       </entry>
@@ -593,10 +589,6 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="clockFreqKey"/>
-         <value>8000000</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN" name="extOscFreqKey"/>
          <value>8000000</value>
       </entry>
       <entry>
@@ -10748,6 +10740,10 @@
          <value>PORTB</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="rxPinMapper%aux3"/>
+         <value>PORTB</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRA0"/>
          <value>disabled</value>
       </entry>
@@ -10885,6 +10881,10 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="txPinMapper%aux0"/>
+         <value>PORTB</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="txPinMapper%aux2"/>
          <value>PORTB</value>
       </entry>
       <entry>
@@ -12882,16 +12882,16 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\interrupt_manager.h</file>
-         <hash>c896dff26bfafb2dee285aac31c3abdc5b007bb0cfe626e23c5f90b8366fd68d</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.h</file>
          <hash>31e6a0d5e3f55ee7953d723cae9e906971cb33fa6191193384f0f604e9a3cbae</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\device_config.h</file>
          <hash>c47363fa825d16b0325850752525549e4bc5267756b945237be662a875070339</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.h</file>
+         <hash>c896dff26bfafb2dee285aac31c3abdc5b007bb0cfe626e23c5f90b8366fd68d</hash>
       </entry>
       <entry>
          <file>main.c</file>
@@ -12946,12 +12946,12 @@
          <hash>13d4874d789b563dd4499efacd71882cbc38f8459da91ac17f13fa76079be93b</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>05c76b080917ba563354e5fac57a22607ba1873be7387c59fe158932105137b2</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>dc8dd1764c10290ae035f1ebb8375946319d5f0d22d7cf8e38127c0648c30d9f</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\interrupt_manager.c</file>
+         <hash>05c76b080917ba563354e5fac57a22607ba1873be7387c59fe158932105137b2</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\ecan.h</file>

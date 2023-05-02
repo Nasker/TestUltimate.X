@@ -85,7 +85,7 @@ channel_AN10 10
 [v ___omul __omul `(uo  1 e 8 0 ]
 "18 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _actOnTriggerCallback actOnTriggerCallback `(v  1 e 1 0 ]
-"30
+"32
 [v _main main `(v  1 e 1 0 ]
 "62 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -729,10 +729,10 @@ channel_AN10 10
 [v _INTCONbits INTCONbits `VES146  1 e 1 @4082 ]
 "54 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
 [v _WakeUpInterruptHandler WakeUpInterruptHandler `*.37(v  1 s 2 WakeUpInterruptHandler ]
-"30 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"32 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"40
+"42
 } 0
 "49 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/AnalogTrigger.h
 [v _readnShoot readnShoot `(v  1 e 1 0 ]
@@ -745,15 +745,14 @@ channel_AN10 10
 {
 [v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 wreg ]
 [s S492 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"19
+"20
 [u S504 . 14 `S492 1 frame 14 0 `[14]uc 1 array 14 0 ]
 [v actOnTriggerCallback@msgTX msgTX `S504  1 a 14 28 ]
 "18
 [v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 wreg ]
 [v actOnTriggerCallback@state state `a  1 p 1 26 ]
-"20
 [v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 27 ]
-"28
+"30
 } 0
 "26 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/DevicesFunctions.h
 [v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]

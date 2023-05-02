@@ -13,16 +13,18 @@
 
 #define MESSAGE_ID 0x69
 
-#define DELAY_PERIOD 500
+#define DELAY_PERIOD 50
 
 void actOnTriggerCallback(uint8_t triggerID, bool state){
-  uCAN_MSG msgTX;
-  msgTX.frame.id = MESSAGE_ID;
-  msgTX.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-  msgTX.frame.dlc = 0x02;
-  msgTX.frame.data0 = triggerID;
-  msgTX.frame.data1 = state;
-  CAN_transmit(&msgTX);
+  if(state){
+    uCAN_MSG msgTX;
+    msgTX.frame.id = MESSAGE_ID;
+    msgTX.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    msgTX.frame.dlc = 0x02;
+    msgTX.frame.data0 = triggerID;
+    msgTX.frame.data1 = state;
+    CAN_transmit(&msgTX);
+  }
   portAPinWrite(LED_PIN, state);
   DELAY_milliseconds(DELAY_PERIOD);
 }

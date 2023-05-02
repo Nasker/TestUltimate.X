@@ -12,14 +12,14 @@
   0h - 3h		(dist/default/production\TestUltimate.X.production.hex)
   8h - 4Fh		(dist/default/production\TestUltimate.X.production.hex)
   1000h - 100Eh		(dist/default/production\TestUltimate.X.production.hex)
-  1010h - 1907h		(dist/default/production\TestUltimate.X.production.hex)
+  1010h - 1917h		(dist/default/production\TestUltimate.X.production.hex)
   200000h - 200007h		(dist/default/production\TestUltimate.X.production.hex)
   300000h - 30000Dh		(dist/default/production\TestUltimate.X.production.hex)
  Unused ranges:
   4h - 7h
   50h - FFFh
   100Fh - 100Fh
-  1908h - 1FFFFFh
+  1918h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -179,7 +179,8 @@
 000018D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000018E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000018F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001900 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00001900 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001910 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------

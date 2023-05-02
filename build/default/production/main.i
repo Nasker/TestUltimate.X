@@ -20906,15 +20906,17 @@ void readnShoot(void (*userFunction)(uint8_t, _Bool)){
 # 3 "main.c" 2
 # 18 "main.c"
 void actOnTriggerCallback(uint8_t triggerID, _Bool state){
-  uCAN_MSG msgTX;
-  msgTX.frame.id = 0x69;
-  msgTX.frame.idType = 1;
-  msgTX.frame.dlc = 0x02;
-  msgTX.frame.data0 = triggerID;
-  msgTX.frame.data1 = state;
-  CAN_transmit(&msgTX);
+  if(state){
+    uCAN_MSG msgTX;
+    msgTX.frame.id = 0x69;
+    msgTX.frame.idType = 1;
+    msgTX.frame.dlc = 0x02;
+    msgTX.frame.data0 = triggerID;
+    msgTX.frame.data1 = state;
+    CAN_transmit(&msgTX);
+  }
   portAPinWrite(2, state);
-  DELAY_milliseconds(500);
+  DELAY_milliseconds(50);
 }
 
 void main(void){

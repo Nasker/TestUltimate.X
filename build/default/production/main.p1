@@ -1863,74 +1863,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _state `a ~T0 @X0 1 r2 ]
 [f ]
 "19
-[; ;main.c: 19:   uCAN_MSG msgTX;
-[v _msgTX `S1544 ~T0 @X0 1 a ]
+[; ;main.c: 19:   if(state){
+[e $ ! != -> _state `i -> 0 `i 1568  ]
+{
 "20
-[; ;main.c: 20:   msgTX.frame.id = 0x69;
-[e = . . _msgTX 0 1 -> -> -> 105 `i `l `ul ]
+[; ;main.c: 20:     uCAN_MSG msgTX;
+[v _msgTX `S1544 ~T0 @X0 1 a ]
 "21
-[; ;main.c: 21:   msgTX.frame.idType = 1;
-[e = . . _msgTX 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 21:     msgTX.frame.id = 0x69;
+[e = . . _msgTX 0 1 -> -> -> 105 `i `l `ul ]
 "22
-[; ;main.c: 22:   msgTX.frame.dlc = 0x02;
-[e = . . _msgTX 0 2 -> -> 2 `i `uc ]
+[; ;main.c: 22:     msgTX.frame.idType = 1;
+[e = . . _msgTX 0 0 -> -> 1 `i `uc ]
 "23
-[; ;main.c: 23:   msgTX.frame.data0 = triggerID;
-[e = . . _msgTX 0 3 _triggerID ]
+[; ;main.c: 23:     msgTX.frame.dlc = 0x02;
+[e = . . _msgTX 0 2 -> -> 2 `i `uc ]
 "24
-[; ;main.c: 24:   msgTX.frame.data1 = state;
-[e = . . _msgTX 0 4 -> _state `uc ]
+[; ;main.c: 24:     msgTX.frame.data0 = triggerID;
+[e = . . _msgTX 0 3 _triggerID ]
 "25
-[; ;main.c: 25:   CAN_transmit(&msgTX);
-[e ( _CAN_transmit (1 &U _msgTX ]
+[; ;main.c: 25:     msgTX.frame.data1 = state;
+[e = . . _msgTX 0 4 -> _state `uc ]
 "26
-[; ;main.c: 26:   portAPinWrite(2, state);
-[e ( _portAPinWrite (2 , -> -> 2 `i `uc _state ]
+[; ;main.c: 26:     CAN_transmit(&msgTX);
+[e ( _CAN_transmit (1 &U _msgTX ]
 "27
-[; ;main.c: 27:   DELAY_milliseconds(500);
-[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
+[; ;main.c: 27:   }
+}
+[e :U 1568 ]
 "28
-[; ;main.c: 28: }
+[; ;main.c: 28:   portAPinWrite(2, state);
+[e ( _portAPinWrite (2 , -> -> 2 `i `uc _state ]
+"29
+[; ;main.c: 29:   DELAY_milliseconds(50);
+[e ( _DELAY_milliseconds (1 -> -> 50 `i `us ]
+"30
+[; ;main.c: 30: }
 [e :UE 1567 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"30
-[; ;main.c: 30: void main(void){
+"32
+[; ;main.c: 32: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"31
-[; ;main.c: 31:   SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"32
-[; ;main.c: 32:   (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "33
-[; ;main.c: 33:   (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;main.c: 33:   SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "34
-[; ;main.c: 34:   portBPinWrite(1, 0);
-[e ( _portBPinWrite (2 , -> -> 1 `i `uc -> -> 0 `i `a ]
+[; ;main.c: 34:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "35
-[; ;main.c: 35:   initTrigger(0x42, 0x0A, 0xD000, 10000);
-[e ( _initTrigger (4 , , , -> -> 66 `i `uc -> -> 10 `i `uc -> -> 53248 `ui `us -> -> 10000 `i `us ]
+[; ;main.c: 35:   (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"36
+[; ;main.c: 36:   portBPinWrite(1, 0);
+[e ( _portBPinWrite (2 , -> -> 1 `i `uc -> -> 0 `i `a ]
 "37
-[; ;main.c: 37:   while (1){
-[e :U 1570 ]
-{
-"38
-[; ;main.c: 38:     readnShoot(actOnTriggerCallback);
-[e ( _readnShoot (1 &U _actOnTriggerCallback ]
+[; ;main.c: 37:   initTrigger(0x42, 0x0A, 0xD000, 10000);
+[e ( _initTrigger (4 , , , -> -> 66 `i `uc -> -> 10 `i `uc -> -> 53248 `ui `us -> -> 10000 `i `us ]
 "39
-[; ;main.c: 39:   }
-}
-[e :U 1569 ]
-[e $U 1570  ]
+[; ;main.c: 39:   while (1){
 [e :U 1571 ]
+{
 "40
-[; ;main.c: 40: }
-[e :UE 1568 ]
+[; ;main.c: 40:     readnShoot(actOnTriggerCallback);
+[e ( _readnShoot (1 &U _actOnTriggerCallback ]
+"41
+[; ;main.c: 41:   }
+}
+[e :U 1570 ]
+[e $U 1571  ]
+[e :U 1572 ]
+"42
+[; ;main.c: 42: }
+[e :UE 1569 ]
 }
 [p f _printf 8388736 ]
 [a 1C 83 116 97 116 101 32 105 115 32 37 100 10 0 ]

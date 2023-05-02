@@ -11,8 +11,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 mcc_generated_files/eccp1.h
 [; ;mcc_generated_files/eccp1.h: 59: void ECCP1_Initialize(void);
 [v _ECCP1_Initialize `(v ~T0 @X0 0 ef ]
-"128 mcc_generated_files/adc.h
-[; ;mcc_generated_files/adc.h: 128: void ADC_Initialize(void);
+"138 mcc_generated_files/adc.h
+[; ;mcc_generated_files/adc.h: 138: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
 "115 mcc_generated_files/ecan.h
 [; ;mcc_generated_files/ecan.h: 115: void ECAN_Initialize(void);

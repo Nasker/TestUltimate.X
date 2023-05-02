@@ -1,37 +1,40 @@
 #include "mcc_generated_files/mcc.h"
-#include "LedControl.h"
+#include "DevicesFunctions.h"
+#include "AnalogTrigger.h"
 
 
 #define STBY_CAN_PIN 1
 #define LED_PIN  2
+
 #define LDR_PIN 0x0A
+#define TRIGGER_ID 0x42
+#define LDR_THRESHOLD 0xD000
+#define GUARD_CYCLES 10000
 
 #define MESSAGE_ID 0x69
 
-#define LDR_THRESHOLD 0xD000
+#define DELAY_PERIOD 500
 
-#define DELAY_PERIOD 50
+void actOnTriggerCallback(uint8_t triggerID, bool state){
+  uCAN_MSG msgTX;
+  msgTX.frame.id = MESSAGE_ID;
+  msgTX.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+  msgTX.frame.dlc = 0x02;
+  msgTX.frame.data0 = triggerID;
+  msgTX.frame.data1 = state;
+  CAN_transmit(&msgTX);
+  portAPinWrite(LED_PIN, state);
+  DELAY_milliseconds(DELAY_PERIOD);
+}
 
 void main(void){
   SYSTEM_Initialize();
   INTERRUPT_GlobalInterruptEnable();
   INTERRUPT_PeripheralInterruptEnable();
-  uCAN_MSG msgTX;
-  uCAN_MSG msgRX;
-  msgTX.frame.id = MESSAGE_ID;
-  msgTX.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-  msgTX.frame.dlc = 0x02;
   portBPinWrite(STBY_CAN_PIN, false);
+  initTrigger(TRIGGER_ID, LDR_PIN, LDR_THRESHOLD, GUARD_CYCLES);
+  
   while (true){
-    ADC_StartConversion(LDR_PIN);
-    uint16_t convertedValue = ADC_GetConversionResult();
-
-    msgTX.frame.data0 = convertedValue >> 8;
-    msgTX.frame.data1 = convertedValue & 0xFF;
-    CAN_transmit(&msgTX);
-
-    portAPinWrite(LED_PIN, convertedValue < LDR_THRESHOLD);
-
-    DELAY_milliseconds(DELAY_PERIOD);
+    readnShoot(actOnTriggerCallback);
   }
 }

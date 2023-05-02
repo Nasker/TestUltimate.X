@@ -8,6 +8,11 @@
 #pragma once
 
 #include <xc.h>
+#include "mcc_generated_files/adc.h"
+
+uint16_t treshold = 0;
+bool triggerState = false;
+uint8_t analog_channel = 0;
 
 
 void portsInit(){

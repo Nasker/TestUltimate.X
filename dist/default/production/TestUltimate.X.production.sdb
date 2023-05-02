@@ -3,27 +3,59 @@
 [d edition pro ]
 [d chip 18F45K80 ]
 [d frameptr 4065 ]
-"26 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
-[e E12718 . `uc
-channel_CTMU 28
-channel_Temp_diode 29
-channel_Vdd_core 30
-channel_1_024V_bandgap 31
-channel_AN10 10
-]
 "83 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/adc.c
 [e E12396 . `uc
 channel_CTMU 28
 channel_Temp_diode 29
 channel_Vdd_core 30
 channel_1_024V_bandgap 31
+IO_RA0 0
+IO_RA1 1
+IO_RA2 2
+IO_RA3 3
+IO_RA5 4
+IO_RE0 5
+IO_RE1 6
+IO_RE2 7
+IO_RB1 8
+IO_RB4 9
 channel_AN10 10
 ]
-"21 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
+"50 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/AnalogTrigger.h
+[e E12718 . `uc
+channel_CTMU 28
+channel_Temp_diode 29
+channel_Vdd_core 30
+channel_1_024V_bandgap 31
+IO_RA0 0
+IO_RA1 1
+IO_RA2 2
+IO_RA3 3
+IO_RA5 4
+IO_RE0 5
+IO_RE1 6
+IO_RE2 7
+IO_RB1 8
+IO_RB4 9
+channel_AN10 10
+]
+"18
+[v _setID setID `(v  1 e 1 0 ]
+"22
+[v _setCountGuard setCountGuard `(v  1 e 1 0 ]
+"30
+[v _setAnalogChannel setAnalogChannel `(v  1 e 1 0 ]
+"34
+[v _setThreshold setThreshold `(v  1 e 1 0 ]
+"38
+[v _initTrigger initTrigger `(v  1 e 1 0 ]
+"49
+[v _readnShoot readnShoot `(v  1 e 1 0 ]
+"26 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/DevicesFunctions.h
 [v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
-"25
+"30
 [v _portBPinWrite portBPinWrite `(v  1 e 1 0 ]
-"29
+"34
 [v _portBPinRead portBPinRead `(a  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -51,14 +83,16 @@ channel_AN10 10
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"15 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"18 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+[v _actOnTriggerCallback actOnTriggerCallback `(v  1 e 1 0 ]
+"30
 [v _main main `(v  1 e 1 0 ]
 "62 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "83
 [v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
-"102
-[v _ADC_GetConversionResult ADC_GetConversionResult `(us  1 e 2 0 ]
+"108
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 "38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 [v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
 "49
@@ -91,6 +125,24 @@ channel_AN10 10
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"7 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/AnalogTrigger.h
+[v __ID _ID `uc  1 e 1 0 ]
+"8
+[v __inputPin _inputPin `uc  1 e 1 0 ]
+"9
+[v __reading _reading `us  1 e 2 0 ]
+"10
+[v __state _state `a  1 e 1 0 ]
+"11
+[v __prevState _prevState `a  1 e 1 0 ]
+"12
+[v __threshold _threshold `us  1 e 2 0 ]
+"13
+[v __shootGuard _shootGuard `a  1 e 1 0 ]
+"14
+[v __countGuardCycles _countGuardCycles `us  1 e 2 0 ]
+"15
+[v __countGuard _countGuard `us  1 e 2 0 ]
 "192 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
 [v _BRGCON1 BRGCON1 `VEuc  1 e 1 @3651 ]
 "268
@@ -526,16 +578,16 @@ channel_AN10 10
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "34938
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S1198 . 1 `uc 1 . 1 0 :1:0 
+[s S1068 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "34983
-[s S1201 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1071 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "34983
-[s S1205 . 1 `uc 1 . 1 0 :1:0 
+[s S1075 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -544,30 +596,30 @@ channel_AN10 10
 `uc 1 CHS4 1 0 :1:6 
 ]
 "34983
-[s S1213 . 1 `uc 1 . 1 0 :1:0 
+[s S1083 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
 "34983
-[s S1216 . 1 `uc 1 . 1 0 :1:0 
+[s S1086 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
 "34983
-[s S1219 . 1 `uc 1 . 1 0 :1:0 
+[s S1089 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
 "34983
-[s S1222 . 1 `uc 1 . 1 0 :1:0 
+[s S1092 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
 "34983
-[s S1225 . 1 `uc 1 . 1 0 :1:0 
+[s S1095 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
 "34983
-[u S1228 . 1 `S1198 1 . 1 0 `S1201 1 . 1 0 `S1205 1 . 1 0 `S1213 1 . 1 0 `S1216 1 . 1 0 `S1219 1 . 1 0 `S1222 1 . 1 0 `S1225 1 . 1 0 ]
+[u S1098 . 1 `S1068 1 . 1 0 `S1071 1 . 1 0 `S1075 1 . 1 0 `S1083 1 . 1 0 `S1086 1 . 1 0 `S1089 1 . 1 0 `S1092 1 . 1 0 `S1095 1 . 1 0 ]
 "34983
 "34983
-[v _ADCON0bits ADCON0bits `VES1228  1 e 1 @4034 ]
+[v _ADCON0bits ADCON0bits `VES1098  1 e 1 @4034 ]
 "35070
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "35090
@@ -677,75 +729,40 @@ channel_AN10 10
 [v _INTCONbits INTCONbits `VES146  1 e 1 @4082 ]
 "54 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
 [v _WakeUpInterruptHandler WakeUpInterruptHandler `*.37(v  1 s 2 WakeUpInterruptHandler ]
-"15 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+"30 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"27
-[v main@convertedValue convertedValue `us  1 a 2 26 ]
+"40
+} 0
+"49 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/AnalogTrigger.h
+[v _readnShoot readnShoot `(v  1 e 1 0 ]
+{
+[v readnShoot@userFunction userFunction `*.37(v  1 p 2 42 ]
+"77
+} 0
+"18 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\main.c
+[v _actOnTriggerCallback actOnTriggerCallback `(v  1 e 1 0 ]
+{
+[v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 wreg ]
 [s S492 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "19
 [u S504 . 14 `S492 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v main@msgTX msgTX `S504  1 a 14 28 ]
-"37
+[v actOnTriggerCallback@msgTX msgTX `S504  1 a 14 28 ]
+"18
+[v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 wreg ]
+[v actOnTriggerCallback@state state `a  1 p 1 26 ]
+"20
+[v actOnTriggerCallback@triggerID triggerID `uc  1 a 1 27 ]
+"28
 } 0
-"25 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/LedControl.h
-[v _portBPinWrite portBPinWrite `(v  1 e 1 0 ]
-{
-[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
-[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
-[v portBPinWrite@state state `a  1 p 1 2 ]
-[v portBPinWrite@pin pin `uc  1 a 1 5 ]
-"27
-} 0
-"21
+"26 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/DevicesFunctions.h
 [v _portAPinWrite portAPinWrite `(v  1 e 1 0 ]
 {
 [v portAPinWrite@pin pin `uc  1 a 1 wreg ]
 [v portAPinWrite@pin pin `uc  1 a 1 wreg ]
 [v portAPinWrite@state state `a  1 p 1 2 ]
 [v portAPinWrite@pin pin `uc  1 a 1 5 ]
-"23
-} 0
-"50 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-{
-"59
-} 0
-"55 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-{
-"94
-} 0
-"61 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-{
-"71
-} 0
-"52 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-{
-"56
-} 0
-"49 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/eccp1.c
-[v _ECCP1_Initialize ECCP1_Initialize `(v  1 e 1 0 ]
-{
-"60
-} 0
-"65 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
-[v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
-{
-"152
-} 0
-"439
-[v _ECAN_SetWakeUpInterruptHandler ECAN_SetWakeUpInterruptHandler `(v  1 e 1 0 ]
-{
-[v ECAN_SetWakeUpInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"442
-} 0
-"62 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/adc.c
-[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-{
-"81
+"28
 } 0
 "38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/delay.c
 [v _DELAY_milliseconds DELAY_milliseconds `(v  1 e 1 0 ]
@@ -793,10 +810,103 @@ channel_AN10 10
 [v ADC_StartConversion@channel channel `E12396  1 a 1 3 ]
 "94
 } 0
-"102
-[v _ADC_GetConversionResult ADC_GetConversionResult `(us  1 e 2 0 ]
+"108
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 {
-"106
+[v ADC_GetConversion@channel channel `E12396  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E12396  1 a 1 wreg ]
+"111
+[v ADC_GetConversion@channel channel `E12396  1 a 1 6 ]
+"127
+} 0
+"30 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/DevicesFunctions.h
+[v _portBPinWrite portBPinWrite `(v  1 e 1 0 ]
+{
+[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portBPinWrite@pin pin `uc  1 a 1 wreg ]
+[v portBPinWrite@state state `a  1 p 1 2 ]
+[v portBPinWrite@pin pin `uc  1 a 1 5 ]
+"32
+} 0
+"38 C:\Users\omartinez\MPLABXProjects\TestUltimate.X/AnalogTrigger.h
+[v _initTrigger initTrigger `(v  1 e 1 0 ]
+{
+[v initTrigger@ID ID `uc  1 a 1 wreg ]
+[v initTrigger@ID ID `uc  1 a 1 wreg ]
+[v initTrigger@channel channel `uc  1 p 1 4 ]
+[v initTrigger@threshold threshold `us  1 p 2 5 ]
+[v initTrigger@countGuardCycles countGuardCycles `us  1 p 2 7 ]
+[v initTrigger@ID ID `uc  1 a 1 9 ]
+"47
+} 0
+"34
+[v _setThreshold setThreshold `(v  1 e 1 0 ]
+{
+[v setThreshold@value value `us  1 p 2 2 ]
+"36
+} 0
+"18
+[v _setID setID `(v  1 e 1 0 ]
+{
+[v setID@ID ID `uc  1 a 1 wreg ]
+[v setID@ID ID `uc  1 a 1 wreg ]
+[v setID@ID ID `uc  1 a 1 2 ]
+"20
+} 0
+"22
+[v _setCountGuard setCountGuard `(v  1 e 1 0 ]
+{
+[v setCountGuard@count count `us  1 p 2 2 ]
+"24
+} 0
+"30
+[v _setAnalogChannel setAnalogChannel `(v  1 e 1 0 ]
+{
+[v setAnalogChannel@channel channel `uc  1 a 1 wreg ]
+[v setAnalogChannel@channel channel `uc  1 a 1 wreg ]
+[v setAnalogChannel@channel channel `uc  1 a 1 2 ]
+"32
+} 0
+"50 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"59
+} 0
+"55 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"61 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"52 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"49 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/eccp1.c
+[v _ECCP1_Initialize ECCP1_Initialize `(v  1 e 1 0 ]
+{
+"60
+} 0
+"65 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/ecan.c
+[v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
+{
+"152
+} 0
+"439
+[v _ECAN_SetWakeUpInterruptHandler ECAN_SetWakeUpInterruptHandler `(v  1 e 1 0 ]
+{
+[v ECAN_SetWakeUpInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
+"442
+} 0
+"62 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"81
 } 0
 "58 C:\Users\omartinez\MPLABXProjects\TestUltimate.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]

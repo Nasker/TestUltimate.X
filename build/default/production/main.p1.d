@@ -8,4 +8,5 @@ mcc_generated_files/eccp1.h  \
 mcc_generated_files/adc.h  \
 mcc_generated_files/delay.h  \
 mcc_generated_files/ecan.h  \
-LedControl.h 
+DevicesFunctions.h  \
+AnalogTrigger.h 

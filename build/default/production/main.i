@@ -20704,19 +20704,29 @@ typedef enum
     channel_Temp_diode = 0x1D,
     channel_Vdd_core = 0x1E,
     channel_1_024V_bandgap = 0x1F,
+    IO_RA0 = 0x0,
+    IO_RA1 = 0x1,
+    IO_RA2 = 0x2,
+    IO_RA3 = 0x3,
+    IO_RA5 = 0x4,
+    IO_RE0 = 0x5,
+    IO_RE1 = 0x6,
+    IO_RE2 = 0x7,
+    IO_RB1 = 0x8,
+    IO_RB4 = 0x9,
     channel_AN10 = 0xa
 } adc_channel_t;
-# 128 "./mcc_generated_files/adc.h"
+# 138 "./mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 157 "./mcc_generated_files/adc.h"
+# 167 "./mcc_generated_files/adc.h"
 void ADC_StartConversion(adc_channel_t channel);
-# 189 "./mcc_generated_files/adc.h"
+# 199 "./mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone(void);
-# 222 "./mcc_generated_files/adc.h"
+# 232 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 252 "./mcc_generated_files/adc.h"
+# 262 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 280 "./mcc_generated_files/adc.h"
+# 290 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
@@ -20772,8 +20782,13 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
-# 1 "./LedControl.h" 1
-# 13 "./LedControl.h"
+# 1 "./DevicesFunctions.h" 1
+# 13 "./DevicesFunctions.h"
+uint16_t treshold = 0;
+_Bool triggerState = 0;
+uint8_t analog_channel = 0;
+
+
 void portsInit(){
 
     TRISA = 0x00;
@@ -20809,27 +20824,107 @@ void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
     portAPinWrite(pinWrite, state);
 }
 # 2 "main.c" 2
-# 15 "main.c"
+
+# 1 "./AnalogTrigger.h" 1
+
+
+
+
+
+
+uint8_t _ID = 0;
+uint8_t _inputPin = 0;
+uint16_t _reading = 0;
+_Bool _state = 0;
+_Bool _prevState = 0;
+uint16_t _threshold = 0;
+_Bool _shootGuard = 0;
+uint16_t _countGuardCycles = 10000;
+uint16_t _countGuard = 0;
+
+
+void setID(uint8_t ID){
+    _ID = ID;
+}
+
+void setCountGuard(uint16_t count){
+    _countGuardCycles = count;
+}
+
+_Bool overThreshold(){
+    return _state;
+}
+
+void setAnalogChannel(uint8_t channel){
+    _inputPin = channel;
+}
+
+void setThreshold(uint16_t value){
+    _threshold = value;
+}
+
+void initTrigger(uint8_t ID, uint8_t channel, uint16_t threshold, uint16_t countGuardCycles){
+    setID(ID);
+    setAnalogChannel(channel);
+    setThreshold(threshold);
+    setCountGuard(countGuardCycles);
+    _prevState = 0;
+    _shootGuard = 0;
+    _countGuard = 0;
+    _state = 0;
+}
+
+void readnShoot(void (*userFunction)(uint8_t, _Bool)){
+    ADC_StartConversion(_inputPin);
+    _reading = ADC_GetConversion(_inputPin);
+    if(_shootGuard)
+        _countGuard++;
+
+    if(_countGuard >= _countGuardCycles){
+        _shootGuard=0;
+        _countGuard=0;
+    }
+
+    if(_reading > _threshold){
+        _state = 1;
+        }
+        else{
+        _state = 0;
+    }
+    if(_state != _prevState){
+        if((_state)&&(!_shootGuard)){
+        (*userFunction)(_ID,1);
+        _shootGuard=1;
+        _countGuard=0;
+        }
+        if(!_state){
+        (*userFunction)(_ID,0);
+        }
+        _prevState = _state;
+    }
+}
+# 3 "main.c" 2
+# 18 "main.c"
+void actOnTriggerCallback(uint8_t triggerID, _Bool state){
+  uCAN_MSG msgTX;
+  msgTX.frame.id = 0x69;
+  msgTX.frame.idType = 1;
+  msgTX.frame.dlc = 0x02;
+  msgTX.frame.data0 = triggerID;
+  msgTX.frame.data1 = state;
+  CAN_transmit(&msgTX);
+  portAPinWrite(2, state);
+  DELAY_milliseconds(500);
+}
+
 void main(void){
   SYSTEM_Initialize();
   (INTCONbits.GIE = 1);
   (INTCONbits.PEIE = 1);
-  uCAN_MSG msgTX;
-  uCAN_MSG msgRX;
-  msgTX.frame.id = 0x69;
-  msgTX.frame.idType = 1;
-  msgTX.frame.dlc = 0x02;
   portBPinWrite(1, 0);
+  initTrigger(0x42, 0x0A, 0xD000, 10000);
+
   while (1){
-    ADC_StartConversion(0x0A);
-    uint16_t convertedValue = ADC_GetConversionResult();
-
-    msgTX.frame.data0 = convertedValue >> 8;
-    msgTX.frame.data1 = convertedValue & 0xFF;
-    CAN_transmit(&msgTX);
-
-    portAPinWrite(2, convertedValue < 0xD000);
-
-    DELAY_milliseconds(50);
+    readnShoot(actOnTriggerCallback);
   }
 }

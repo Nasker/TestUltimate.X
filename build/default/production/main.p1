@@ -20,6 +20,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "105 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[v F12826 `(v ~T0 @X0 0 tf2`uc`a ]
+[v F12830 `(v ~T0 @X0 0 tf2`uc`a ]
+"50 ./AnalogTrigger.h
+[; ;./AnalogTrigger.h: 50:     ADC_StartConversion(_inputPin);
+[c E12718 28 29 30 31 0 1 2 3 4 5 6 7 8 9 10 .. ]
+[n E12718 . channel_CTMU channel_Temp_diode channel_Vdd_core channel_1_024V_bandgap IO_RA0 IO_RA1 IO_RA2 IO_RA3 IO_RA5 IO_RE0 IO_RE1 IO_RE2 IO_RB1 IO_RB4 channel_AN10  ]
+"167 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 167: void ADC_StartConversion(adc_channel_t channel);
+[v _ADC_StartConversion `(v ~T0 @X0 0 ef1`E12718 ]
+"262
+[; ;./mcc_generated_files/adc.h: 262: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E12718 ]
+"64 ./mcc_generated_files/ecan.h
+[; ;./mcc_generated_files/ecan.h: 64:     struct {
+[s S1545 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1545 . idType id dlc data0 data1 data2 data3 data4 data5 data6 data7 ]
+"62
+[; ;./mcc_generated_files/ecan.h: 62: typedef union {
+[u S1544 `S1545 1 `uc -> 14 `i ]
+[n S1544 . frame array ]
+"158
+[; ;./mcc_generated_files/ecan.h: 158: uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
+[v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1544 ]
 [p mainexit ]
 "74 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
@@ -43,27 +66,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37236
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37236: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS1507 ~T0 @X0 0 e@4082 ]
-"64 ./mcc_generated_files/ecan.h
-[; ;./mcc_generated_files/ecan.h: 64:     struct {
-[s S1545 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1545 . idType id dlc data0 data1 data2 data3 data4 data5 data6 data7 ]
-"62
-[; ;./mcc_generated_files/ecan.h: 62: typedef union {
-[u S1544 `S1545 1 `uc -> 14 `i ]
-[n S1544 . frame array ]
-"26 main.c
-[; ;main.c: 26:     ADC_StartConversion(0x0A);
-[c E12718 28 29 30 31 10 .. ]
-[n E12718 . channel_CTMU channel_Temp_diode channel_Vdd_core channel_1_024V_bandgap channel_AN10  ]
-"157 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 157: void ADC_StartConversion(adc_channel_t channel);
-[v _ADC_StartConversion `(v ~T0 @X0 0 ef1`E12718 ]
-"222
-[; ;./mcc_generated_files/adc.h: 222: adc_result_t ADC_GetConversionResult(void);
-[v _ADC_GetConversionResult `(us ~T0 @X0 0 ef ]
-"158 ./mcc_generated_files/ecan.h
-[; ;./mcc_generated_files/ecan.h: 158: uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
-[v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1544 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 54: __asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
@@ -1456,84 +1458,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37766
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f45k80.h: 37766: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 ./LedControl.h
-[; ;./LedControl.h: 13: void portsInit(){
+"13 ./DevicesFunctions.h
+[; ;./DevicesFunctions.h: 13: uint16_t treshold = 0;
+[v _treshold `us ~T0 @X0 1 e ]
+[i _treshold
+-> -> 0 `i `us
+]
+"14
+[; ;./DevicesFunctions.h: 14: _Bool triggerState = 0;
+[v _triggerState `a ~T0 @X0 1 e ]
+[i _triggerState
+-> -> 0 `i `a
+]
+"15
+[; ;./DevicesFunctions.h: 15: uint8_t analog_channel = 0;
+[v _analog_channel `uc ~T0 @X0 1 e ]
+[i _analog_channel
+-> -> 0 `i `uc
+]
+"18
+[; ;./DevicesFunctions.h: 18: void portsInit(){
 [v _portsInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _portsInit ]
 [f ]
-"15
-[; ;./LedControl.h: 15:     TRISA = 0x00;
+"20
+[; ;./DevicesFunctions.h: 20:     TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
-"17
-[; ;./LedControl.h: 17:     TRISB = 0xCB;
+"22
+[; ;./DevicesFunctions.h: 22:     TRISB = 0xCB;
 [e = _TRISB -> -> 203 `i `uc ]
-"19
-[; ;./LedControl.h: 19: }
+"24
+[; ;./DevicesFunctions.h: 24: }
 [e :UE 1546 ]
 }
-"21
-[; ;./LedControl.h: 21: void portAPinWrite(uint8_t pin, _Bool state){
+"26
+[; ;./DevicesFunctions.h: 26: void portAPinWrite(uint8_t pin, _Bool state){
 [v _portAPinWrite `(v ~T0 @X0 1 ef2`uc`a ]
 {
 [e :U _portAPinWrite ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _state `a ~T0 @X0 1 r2 ]
 [f ]
-"22
-[; ;./LedControl.h: 22:     PORTA = (state << pin);
+"27
+[; ;./DevicesFunctions.h: 27:     PORTA = (state << pin);
 [e = _PORTA -> << -> _state `i -> _pin `i `uc ]
-"23
-[; ;./LedControl.h: 23: }
+"28
+[; ;./DevicesFunctions.h: 28: }
 [e :UE 1547 ]
 }
-"25
-[; ;./LedControl.h: 25: void portBPinWrite(uint8_t pin, _Bool state){
+"30
+[; ;./DevicesFunctions.h: 30: void portBPinWrite(uint8_t pin, _Bool state){
 [v _portBPinWrite `(v ~T0 @X0 1 ef2`uc`a ]
 {
 [e :U _portBPinWrite ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _state `a ~T0 @X0 1 r2 ]
 [f ]
-"26
-[; ;./LedControl.h: 26:     PORTB = (state << pin);
+"31
+[; ;./DevicesFunctions.h: 31:     PORTB = (state << pin);
 [e = _PORTB -> << -> _state `i -> _pin `i `uc ]
-"27
-[; ;./LedControl.h: 27: }
+"32
+[; ;./DevicesFunctions.h: 32: }
 [e :UE 1548 ]
 }
-"29
-[; ;./LedControl.h: 29: _Bool portBPinRead(uint8_t pin){
+"34
+[; ;./DevicesFunctions.h: 34: _Bool portBPinRead(uint8_t pin){
 [v _portBPinRead `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _portBPinRead ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-"30
-[; ;./LedControl.h: 30:     return PORTB & (1 << pin);
+"35
+[; ;./DevicesFunctions.h: 35:     return PORTB & (1 << pin);
 [e ) -> & -> _PORTB `i << -> 1 `i -> _pin `i `a ]
 [e $UE 1549  ]
-"31
-[; ;./LedControl.h: 31: }
+"36
+[; ;./DevicesFunctions.h: 36: }
 [e :UE 1549 ]
 }
-"33
-[; ;./LedControl.h: 33: _Bool portCPinRead(uint8_t pin){
+"38
+[; ;./DevicesFunctions.h: 38: _Bool portCPinRead(uint8_t pin){
 [v _portCPinRead `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _portCPinRead ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-"34
-[; ;./LedControl.h: 34:     return PORTC & (1 << pin);
+"39
+[; ;./DevicesFunctions.h: 39:     return PORTC & (1 << pin);
 [e ) -> & -> _PORTC `i << -> 1 `i -> _pin `i `a ]
 [e $UE 1550  ]
-"35
-[; ;./LedControl.h: 35: }
+"40
+[; ;./DevicesFunctions.h: 40: }
 [e :UE 1550 ]
 }
-"37
-[; ;./LedControl.h: 37: void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
+"42
+[; ;./DevicesFunctions.h: 42: void portAPinWrite_ms(uint8_t pin, _Bool state, uint16_t time){
 [v _portAPinWrite_ms `(v ~T0 @X0 1 ef3`uc`a`us ]
 {
 [e :U _portAPinWrite_ms ]
@@ -1541,107 +1561,376 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _state `a ~T0 @X0 1 r2 ]
 [v _time `us ~T0 @X0 1 r3 ]
 [f ]
-"38
-[; ;./LedControl.h: 38:     portAPinWrite(pin, state);
+"43
+[; ;./DevicesFunctions.h: 43:     portAPinWrite(pin, state);
 [e ( _portAPinWrite (2 , _pin _state ]
-"39
-[; ;./LedControl.h: 39:     DELAY_milliseconds(time);
+"44
+[; ;./DevicesFunctions.h: 44:     DELAY_milliseconds(time);
 [e ( _DELAY_milliseconds (1 _time ]
-"40
-[; ;./LedControl.h: 40:     printf("State is %d\n", state);
+"45
+[; ;./DevicesFunctions.h: 45:     printf("State is %d\n", state);
 [e ( _printf , (. :s 1C -> _state `i ]
-"41
-[; ;./LedControl.h: 41: }
+"46
+[; ;./DevicesFunctions.h: 46: }
 [e :UE 1551 ]
 }
-"43
-[; ;./LedControl.h: 43: void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
+"48
+[; ;./DevicesFunctions.h: 48: void bridgePortAPinToPortBPin(uint8_t pinRead, uint8_t pinWrite){
 [v _bridgePortAPinToPortBPin `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _bridgePortAPinToPortBPin ]
 [v _pinRead `uc ~T0 @X0 1 r1 ]
 [v _pinWrite `uc ~T0 @X0 1 r2 ]
 [f ]
-"44
-[; ;./LedControl.h: 44:     _Bool state = portBPinRead(pinRead);
+"49
+[; ;./DevicesFunctions.h: 49:     _Bool state = portBPinRead(pinRead);
 [v _state `a ~T0 @X0 1 a ]
 [e = _state ( _portBPinRead (1 _pinRead ]
-"45
-[; ;./LedControl.h: 45:     portAPinWrite(pinWrite, state);
+"50
+[; ;./DevicesFunctions.h: 50:     portAPinWrite(pinWrite, state);
 [e ( _portAPinWrite (2 , _pinWrite _state ]
-"46
-[; ;./LedControl.h: 46: }
+"51
+[; ;./DevicesFunctions.h: 51: }
 [e :UE 1552 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"15 main.c
-[; ;main.c: 15: void main(void){
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"16
-[; ;main.c: 16:   SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"17
-[; ;main.c: 17:   (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"7 ./AnalogTrigger.h
+[; ;./AnalogTrigger.h: 7: uint8_t _ID = 0;
+[v __ID `uc ~T0 @X0 1 e ]
+[i __ID
+-> -> 0 `i `uc
+]
+"8
+[; ;./AnalogTrigger.h: 8: uint8_t _inputPin = 0;
+[v __inputPin `uc ~T0 @X0 1 e ]
+[i __inputPin
+-> -> 0 `i `uc
+]
+"9
+[; ;./AnalogTrigger.h: 9: uint16_t _reading = 0;
+[v __reading `us ~T0 @X0 1 e ]
+[i __reading
+-> -> 0 `i `us
+]
+"10
+[; ;./AnalogTrigger.h: 10: _Bool _state = 0;
+[v __state `a ~T0 @X0 1 e ]
+[i __state
+-> -> 0 `i `a
+]
+"11
+[; ;./AnalogTrigger.h: 11: _Bool _prevState = 0;
+[v __prevState `a ~T0 @X0 1 e ]
+[i __prevState
+-> -> 0 `i `a
+]
+"12
+[; ;./AnalogTrigger.h: 12: uint16_t _threshold = 0;
+[v __threshold `us ~T0 @X0 1 e ]
+[i __threshold
+-> -> 0 `i `us
+]
+"13
+[; ;./AnalogTrigger.h: 13: _Bool _shootGuard = 0;
+[v __shootGuard `a ~T0 @X0 1 e ]
+[i __shootGuard
+-> -> 0 `i `a
+]
+"14
+[; ;./AnalogTrigger.h: 14: uint16_t _countGuardCycles = 10000;
+[v __countGuardCycles `us ~T0 @X0 1 e ]
+[i __countGuardCycles
+-> -> 10000 `i `us
+]
+"15
+[; ;./AnalogTrigger.h: 15: uint16_t _countGuard = 0;
+[v __countGuard `us ~T0 @X0 1 e ]
+[i __countGuard
+-> -> 0 `i `us
+]
 "18
-[; ;main.c: 18:   (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;./AnalogTrigger.h: 18: void setID(uint8_t ID){
+[v _setID `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setID ]
+[v _ID `uc ~T0 @X0 1 r1 ]
+[f ]
+"19
+[; ;./AnalogTrigger.h: 19:     _ID = ID;
+[e = __ID _ID ]
+"20
+[; ;./AnalogTrigger.h: 20: }
+[e :UE 1553 ]
+}
+"22
+[; ;./AnalogTrigger.h: 22: void setCountGuard(uint16_t count){
+[v _setCountGuard `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _setCountGuard ]
+[v _count `us ~T0 @X0 1 r1 ]
+[f ]
+"23
+[; ;./AnalogTrigger.h: 23:     _countGuardCycles = count;
+[e = __countGuardCycles _count ]
+"24
+[; ;./AnalogTrigger.h: 24: }
+[e :UE 1554 ]
+}
+"26
+[; ;./AnalogTrigger.h: 26: _Bool overThreshold(){
+[v _overThreshold `(a ~T0 @X0 1 ef ]
+{
+[e :U _overThreshold ]
+[f ]
+"27
+[; ;./AnalogTrigger.h: 27:     return _state;
+[e ) __state ]
+[e $UE 1555  ]
+"28
+[; ;./AnalogTrigger.h: 28: }
+[e :UE 1555 ]
+}
+"30
+[; ;./AnalogTrigger.h: 30: void setAnalogChannel(uint8_t channel){
+[v _setAnalogChannel `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _setAnalogChannel ]
+[v _channel `uc ~T0 @X0 1 r1 ]
+[f ]
+"31
+[; ;./AnalogTrigger.h: 31:     _inputPin = channel;
+[e = __inputPin _channel ]
+"32
+[; ;./AnalogTrigger.h: 32: }
+[e :UE 1556 ]
+}
+"34
+[; ;./AnalogTrigger.h: 34: void setThreshold(uint16_t value){
+[v _setThreshold `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _setThreshold ]
+[v _value `us ~T0 @X0 1 r1 ]
+[f ]
+"35
+[; ;./AnalogTrigger.h: 35:     _threshold = value;
+[e = __threshold _value ]
+"36
+[; ;./AnalogTrigger.h: 36: }
+[e :UE 1557 ]
+}
+"38
+[; ;./AnalogTrigger.h: 38: void initTrigger(uint8_t ID, uint8_t channel, uint16_t threshold, uint16_t countGuardCycles){
+[v _initTrigger `(v ~T0 @X0 1 ef4`uc`uc`us`us ]
+{
+[e :U _initTrigger ]
+[v _ID `uc ~T0 @X0 1 r1 ]
+[v _channel `uc ~T0 @X0 1 r2 ]
+[v _threshold `us ~T0 @X0 1 r3 ]
+[v _countGuardCycles `us ~T0 @X0 1 r4 ]
+[f ]
+"39
+[; ;./AnalogTrigger.h: 39:     setID(ID);
+[e ( _setID (1 _ID ]
+"40
+[; ;./AnalogTrigger.h: 40:     setAnalogChannel(channel);
+[e ( _setAnalogChannel (1 _channel ]
+"41
+[; ;./AnalogTrigger.h: 41:     setThreshold(threshold);
+[e ( _setThreshold (1 _threshold ]
+"42
+[; ;./AnalogTrigger.h: 42:     setCountGuard(countGuardCycles);
+[e ( _setCountGuard (1 _countGuardCycles ]
+"43
+[; ;./AnalogTrigger.h: 43:     _prevState = 0;
+[e = __prevState -> -> 0 `i `a ]
+"44
+[; ;./AnalogTrigger.h: 44:     _shootGuard = 0;
+[e = __shootGuard -> -> 0 `i `a ]
+"45
+[; ;./AnalogTrigger.h: 45:     _countGuard = 0;
+[e = __countGuard -> -> 0 `i `us ]
+"46
+[; ;./AnalogTrigger.h: 46:     _state = 0;
+[e = __state -> -> 0 `i `a ]
+"47
+[; ;./AnalogTrigger.h: 47: }
+[e :UE 1558 ]
+}
+"49
+[; ;./AnalogTrigger.h: 49: void readnShoot(void (*userFunction)(uint8_t, _Bool)){
+[v _readnShoot `(v ~T0 @X0 1 ef1`*F12826 ]
+{
+[e :U _readnShoot ]
+[v _userFunction `*F12830 ~T0 @X0 1 r1 ]
+[f ]
+"50
+[; ;./AnalogTrigger.h: 50:     ADC_StartConversion(_inputPin);
+[e ( _ADC_StartConversion (1 -> __inputPin `E12718 ]
+"51
+[; ;./AnalogTrigger.h: 51:     _reading = ADC_GetConversion(_inputPin);
+[e = __reading ( _ADC_GetConversion (1 -> __inputPin `E12718 ]
+"52
+[; ;./AnalogTrigger.h: 52:     if(_shootGuard)
+[e $ ! != -> __shootGuard `i -> 0 `i 1560  ]
+"53
+[; ;./AnalogTrigger.h: 53:         _countGuard++;
+[e ++ __countGuard -> -> 1 `i `us ]
+[e :U 1560 ]
+"55
+[; ;./AnalogTrigger.h: 55:     if(_countGuard >= _countGuardCycles){
+[e $ ! >= -> __countGuard `ui -> __countGuardCycles `ui 1561  ]
+{
+"56
+[; ;./AnalogTrigger.h: 56:         _shootGuard=0;
+[e = __shootGuard -> -> 0 `i `a ]
+"57
+[; ;./AnalogTrigger.h: 57:         _countGuard=0;
+[e = __countGuard -> -> 0 `i `us ]
+"58
+[; ;./AnalogTrigger.h: 58:     }
+}
+[e :U 1561 ]
+"60
+[; ;./AnalogTrigger.h: 60:     if(_reading > _threshold){
+[e $ ! > -> __reading `ui -> __threshold `ui 1562  ]
+{
+"61
+[; ;./AnalogTrigger.h: 61:         _state = 1;
+[e = __state -> -> 1 `i `a ]
+"62
+[; ;./AnalogTrigger.h: 62:         }
+}
+[e $U 1563  ]
+"63
+[; ;./AnalogTrigger.h: 63:         else{
+[e :U 1562 ]
+{
+"64
+[; ;./AnalogTrigger.h: 64:         _state = 0;
+[e = __state -> -> 0 `i `a ]
+"65
+[; ;./AnalogTrigger.h: 65:     }
+}
+[e :U 1563 ]
+"66
+[; ;./AnalogTrigger.h: 66:     if(_state != _prevState){
+[e $ ! != -> __state `i -> __prevState `i 1564  ]
+{
+"67
+[; ;./AnalogTrigger.h: 67:         if((_state)&&(!_shootGuard)){
+[e $ ! && != -> __state `i -> 0 `i ! != -> __shootGuard `i -> 0 `i 1565  ]
+{
+"68
+[; ;./AnalogTrigger.h: 68:         (*userFunction)(_ID,1);
+[e ( *U _userFunction (2 , __ID -> -> 1 `i `a ]
+"69
+[; ;./AnalogTrigger.h: 69:         _shootGuard=1;
+[e = __shootGuard -> -> 1 `i `a ]
+"70
+[; ;./AnalogTrigger.h: 70:         _countGuard=0;
+[e = __countGuard -> -> 0 `i `us ]
+"71
+[; ;./AnalogTrigger.h: 71:         }
+}
+[e :U 1565 ]
+"72
+[; ;./AnalogTrigger.h: 72:         if(!_state){
+[e $ ! ! != -> __state `i -> 0 `i 1566  ]
+{
+"73
+[; ;./AnalogTrigger.h: 73:         (*userFunction)(_ID,0);
+[e ( *U _userFunction (2 , __ID -> -> 0 `i `a ]
+"74
+[; ;./AnalogTrigger.h: 74:         }
+}
+[e :U 1566 ]
+"75
+[; ;./AnalogTrigger.h: 75:         _prevState = _state;
+[e = __prevState __state ]
+"76
+[; ;./AnalogTrigger.h: 76:     }
+}
+[e :U 1564 ]
+"77
+[; ;./AnalogTrigger.h: 77: }
+[e :UE 1559 ]
+}
+"18 main.c
+[; ;main.c: 18: void actOnTriggerCallback(uint8_t triggerID, _Bool state){
+[v _actOnTriggerCallback `(v ~T0 @X0 1 ef2`uc`a ]
+{
+[e :U _actOnTriggerCallback ]
+[v _triggerID `uc ~T0 @X0 1 r1 ]
+[v _state `a ~T0 @X0 1 r2 ]
+[f ]
 "19
 [; ;main.c: 19:   uCAN_MSG msgTX;
 [v _msgTX `S1544 ~T0 @X0 1 a ]
 "20
-[; ;main.c: 20:   uCAN_MSG msgRX;
-[v _msgRX `S1544 ~T0 @X0 1 a ]
-"21
-[; ;main.c: 21:   msgTX.frame.id = 0x69;
+[; ;main.c: 20:   msgTX.frame.id = 0x69;
 [e = . . _msgTX 0 1 -> -> -> 105 `i `l `ul ]
-"22
-[; ;main.c: 22:   msgTX.frame.idType = 1;
+"21
+[; ;main.c: 21:   msgTX.frame.idType = 1;
 [e = . . _msgTX 0 0 -> -> 1 `i `uc ]
-"23
-[; ;main.c: 23:   msgTX.frame.dlc = 0x02;
+"22
+[; ;main.c: 22:   msgTX.frame.dlc = 0x02;
 [e = . . _msgTX 0 2 -> -> 2 `i `uc ]
+"23
+[; ;main.c: 23:   msgTX.frame.data0 = triggerID;
+[e = . . _msgTX 0 3 _triggerID ]
 "24
-[; ;main.c: 24:   portBPinWrite(1, 0);
-[e ( _portBPinWrite (2 , -> -> 1 `i `uc -> -> 0 `i `a ]
+[; ;main.c: 24:   msgTX.frame.data1 = state;
+[e = . . _msgTX 0 4 -> _state `uc ]
 "25
-[; ;main.c: 25:   while (1){
-[e :U 1555 ]
-{
-"26
-[; ;main.c: 26:     ADC_StartConversion(0x0A);
-[e ( _ADC_StartConversion (1 -> -> 10 `i `E12718 ]
-"27
-[; ;main.c: 27:     uint16_t convertedValue = ADC_GetConversionResult();
-[v _convertedValue `us ~T0 @X0 1 a ]
-[e = _convertedValue ( _ADC_GetConversionResult ..  ]
-"29
-[; ;main.c: 29:     msgTX.frame.data0 = convertedValue >> 8;
-[e = . . _msgTX 0 3 -> >> -> _convertedValue `ui -> 8 `i `uc ]
-"30
-[; ;main.c: 30:     msgTX.frame.data1 = convertedValue & 0xFF;
-[e = . . _msgTX 0 4 -> & -> _convertedValue `ui -> -> 255 `i `ui `uc ]
-"31
-[; ;main.c: 31:     CAN_transmit(&msgTX);
+[; ;main.c: 25:   CAN_transmit(&msgTX);
 [e ( _CAN_transmit (1 &U _msgTX ]
-"33
-[; ;main.c: 33:     portAPinWrite(2, convertedValue < 0xD000);
-[e ( _portAPinWrite (2 , -> -> 2 `i `uc -> -> < -> _convertedValue `ui -> 53248 `ui `i `a ]
-"35
-[; ;main.c: 35:     DELAY_milliseconds(50);
-[e ( _DELAY_milliseconds (1 -> -> 50 `i `us ]
-"36
-[; ;main.c: 36:   }
+"26
+[; ;main.c: 26:   portAPinWrite(2, state);
+[e ( _portAPinWrite (2 , -> -> 2 `i `uc _state ]
+"27
+[; ;main.c: 27:   DELAY_milliseconds(500);
+[e ( _DELAY_milliseconds (1 -> -> 500 `i `us ]
+"28
+[; ;main.c: 28: }
+[e :UE 1567 ]
 }
-[e :U 1554 ]
-[e $U 1555  ]
-[e :U 1556 ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"30
+[; ;main.c: 30: void main(void){
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"31
+[; ;main.c: 31:   SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"32
+[; ;main.c: 32:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"33
+[; ;main.c: 33:   (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"34
+[; ;main.c: 34:   portBPinWrite(1, 0);
+[e ( _portBPinWrite (2 , -> -> 1 `i `uc -> -> 0 `i `a ]
+"35
+[; ;main.c: 35:   initTrigger(0x42, 0x0A, 0xD000, 10000);
+[e ( _initTrigger (4 , , , -> -> 66 `i `uc -> -> 10 `i `uc -> -> 53248 `ui `us -> -> 10000 `i `us ]
 "37
-[; ;main.c: 37: }
-[e :UE 1553 ]
+[; ;main.c: 37:   while (1){
+[e :U 1570 ]
+{
+"38
+[; ;main.c: 38:     readnShoot(actOnTriggerCallback);
+[e ( _readnShoot (1 &U _actOnTriggerCallback ]
+"39
+[; ;main.c: 39:   }
+}
+[e :U 1569 ]
+[e $U 1570  ]
+[e :U 1571 ]
+"40
+[; ;main.c: 40: }
+[e :UE 1568 ]
 }
 [p f _printf 8388736 ]
 [a 1C 83 116 97 116 101 32 105 115 32 37 100 10 0 ]

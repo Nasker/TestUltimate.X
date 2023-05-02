@@ -19,7 +19,8 @@
         <itemPath>mcc_generated_files/adc.h</itemPath>
         <itemPath>mcc_generated_files/eccp1.h</itemPath>
       </logicalFolder>
-      <itemPath>LedControl.h</itemPath>
+      <itemPath>DevicesFunctions.h</itemPath>
+      <itemPath>AnalogTrigger.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
